@@ -22,10 +22,10 @@ export default function ToastProvider({ children }: ToastProviderProps) {
     <>
       {children}
       <ToastContainer
-        toastClassName={(context) =>
-          contextClass[context?.type || 'default'] +
-          ' relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer'
-        }
+        // toastClassName={(context) =>
+        //   contextClass[context?.type || 'default'] +
+        //   ' relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer'
+        // }
         position="bottom-left"
         autoClose={3000}
       />
