@@ -9,7 +9,6 @@ export class StorageEnhance {
 
   static readonly get = (key: string) => {
     const v = localStorage.getItem(key);
-    console.log(typeof v, 'ddhbdhbhdhbd');
     return v ? JSON.parse(v) : undefined;
   };
 
