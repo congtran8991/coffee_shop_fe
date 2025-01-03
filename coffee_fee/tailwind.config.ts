@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import KColors from './constants/colors';
 
 export default {
   content: [
@@ -14,6 +15,11 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        primary: {
+          dark: KColors.primary.dark,
+          normal: KColors.primary.normal,
+          light: KColors.primary.light,
+        },
       },
     },
   },

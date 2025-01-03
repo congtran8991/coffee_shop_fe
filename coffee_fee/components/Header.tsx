@@ -67,7 +67,9 @@ const Header = () => {
                 </div>
               </div>
             </li>
-            <li className="px-8 py-2">Menu</li>
+            <li className="px-8 py-2 hover:text-gray-600 focus:outline-none focus:text-white">
+              Menu
+            </li>
             <li className="px-8 py-2">Sản phẩm đóng gói</li>
             <li className="px-8 py-2">Về chúng tôi</li>
             <li className="px-8 py-2">Khuyến mãi</li>
