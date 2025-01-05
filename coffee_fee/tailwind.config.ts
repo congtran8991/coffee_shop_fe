@@ -20,6 +20,21 @@ export default {
           normal: KColors.primary.normal,
           light: KColors.primary.light,
         },
+        secondary: {
+          dark: KColors.secondary.dark,
+          normal: KColors.secondary.normal,
+          light: KColors.secondary.light,
+        },
+        warning: {
+          dark: KColors.warning.dark,
+          normal: KColors.warning.normal,
+          light: KColors.warning.light,
+        },
+        customGray: {
+          dark: KColors.gray.dark,
+          normal: KColors.gray.normal,
+          light: KColors.gray.light,
+        },
       },
     },
   },
