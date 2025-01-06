@@ -6,6 +6,7 @@ import Header from '@/components/header';
 import Footer from '@/components/Footer';
 import ToastProvider from '@/components/ToastProvider';
 import ReduxToolkitProvider from '@/provider/ReduxToolkit';
+import Theme from '@/provider/Theme';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,16 +29,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReduxToolkitProvider>
-          <ToastProvider>
-            <Header />
-            {children}
-            <Footer />
-          </ToastProvider>
+          <Theme>
+            <ToastProvider>
+              <Header />
+              {children}
+              <Footer />
+            </ToastProvider>
+          </Theme>
         </ReduxToolkitProvider>
       </body>
     </html>

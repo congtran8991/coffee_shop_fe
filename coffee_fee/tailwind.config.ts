@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 import KColors from './constants/colors';
 
 export default {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,8 +14,8 @@ export default {
     },
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        // background: 'var(--background)',
+        // foreground: 'var(--foreground)',
         primary: {
           dark: KColors.primary.dark,
           normal: KColors.primary.normal,
