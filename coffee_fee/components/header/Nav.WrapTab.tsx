@@ -6,10 +6,10 @@ interface IProps {
 }
 const WrapTab = ({ children, title, isSubTab }: IProps) => {
   return (
-    <li className="px-8 py-2 hover:text-customGray-normal focus:outline-none focus:text-white">
+    <li className="px-8 py-2 text-customGray-normal focus:outline-none focus:text-white">
       <div className="relative group">
         {/* Menu chính */}
-        <button className="hover:text-primary-dark">{title}</button>
+        <button className="hover:text-primary">{title}</button>
 
         {/* Menu con */}
         {isSubTab && (

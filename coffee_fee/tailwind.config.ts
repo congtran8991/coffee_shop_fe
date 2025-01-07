@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import KColors from './constants/colors';
 
 export default {
   darkMode: 'class',
@@ -16,25 +15,37 @@ export default {
       colors: {
         // background: 'var(--background)',
         // foreground: 'var(--foreground)',
-        primary: {
-          dark: KColors.primary.dark,
-          normal: KColors.primary.normal,
-          light: KColors.primary.light,
-        },
-        secondary: {
-          dark: KColors.secondary.dark,
-          normal: KColors.secondary.normal,
-          light: KColors.secondary.light,
-        },
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
         warning: {
-          dark: KColors.warning.dark,
-          normal: KColors.warning.normal,
-          light: KColors.warning.light,
+          light: 'var(--warning-1)',
+          normal: 'var(--warning-2)',
+          dark: 'var(--warning-3)',
+        },
+        border: {
+          light: 'var(--border-1)',
+          normal: 'var(--border-2)',
+          dark: 'var(--border-3)',
+        },
+        danger: {
+          light: 'var(--danger-1)',
+          normal: 'var(--danger-2)',
+          dark: 'var(--danger-3)',
+        },
+        info: {
+          light: 'var(--info-1)',
+          normal: 'var(--info-2)',
+          dark: 'var(--info-3)',
+        },
+        success: {
+          light: 'var(--success-1)',
+          normal: 'var(--success-2)',
+          dark: 'var(--success-3)',
         },
         customGray: {
-          dark: KColors.gray.dark,
-          normal: KColors.gray.normal,
-          light: KColors.gray.light,
+          light: 'var(--gray-1)',
+          normal: 'var(--gray-2)',
+          dark: 'var(--gray-3)',
         },
       },
     },
