@@ -1,7 +1,17 @@
 'use client';
+
+import useIsClientRender from '@/hooks/lib/useIsClientRender';
 import { useTheme } from 'next-themes';
+
 const TopHeader = () => {
   const { theme, setTheme } = useTheme();
+
+  const isClient = useIsClientRender();
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <div className="border-b-2 text-customGray-normal border-bord">
       <div className="container flex justify-between items-center h-16 ">

@@ -1,3 +1,4 @@
+'use client';
 import { subTabAbout } from './menus/about';
 import { subTabDashboard } from './menus/dashboard';
 import { subTabMember } from './menus/member';
@@ -6,6 +7,7 @@ import { subTabProduct } from './menus/product';
 import { subTabPromotion } from './menus/promotion';
 import SubTab from './Nav.SubTab';
 import WrapTab from './Nav.WrapTab';
+import { Button, Typography } from '@mui/material';
 
 const menu = [
   {
@@ -36,6 +38,7 @@ const menu = [
 const Nav = () => {
   return (
     <div className="shadow-lg shadow-gray-200">
+      {/* <Button variant="contained">Contained</Button> */}
       <ul className="container flex justify-center">
         {menu.map((x, index) => {
           return (
