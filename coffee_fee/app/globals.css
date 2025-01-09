@@ -82,6 +82,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
 .p-small-1 {
   @apply p-1;
 }

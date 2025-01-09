@@ -1,15 +1,16 @@
 import TopHeader from './TopHeader';
 import Nav from './Nav';
+import NavResponsive from './Nav.Mobile';
 
 const Header = () => {
   return (
-    <div>
-      <header className="bg-white">
+    <header className="bg-white">
+      <div className="mn:hidden sm: hidden xl:block">
         <TopHeader />
-
         <Nav />
-      </header>
-    </div>
+      </div>
+      <NavResponsive />
+    </header>
   );
 };
 
