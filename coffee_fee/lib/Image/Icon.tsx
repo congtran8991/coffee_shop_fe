@@ -1,21 +1,22 @@
 'use client';
 
-import { memo } from 'react';
-
-import * as MuiIcon from '@mui/icons-material';
-
-type MICon = keyof typeof MuiIcon;
+import { SvgIconTypeMap } from '@mui/material';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { CSSProperties, memo } from 'react';
 
 interface IProps {
-  icon: MICon;
+  icon: OverridableComponent<SvgIconTypeMap<object, 'svg'>>; // Không cần `muiName`
+  className?: string;
+  style?: CSSProperties;
 }
 
-const KICon = (props: IProps) => {
-  const { icon, ...rest } = props;
+const KICon: React.FC<IProps> = ({ icon: IconComponent, ...rest }) => {
+  if (!IconComponent) {
+    console.error('Provided icon is not a valid React component.');
+    return null;
+  }
 
-  const IconComponent = MuiIcon[icon];
-
-  return <IconComponent {...rest} />;
+  return <IconComponent color="warning" {...rest} />;
 };
 
 export default memo(KICon);

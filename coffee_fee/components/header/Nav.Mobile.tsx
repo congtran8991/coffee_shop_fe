@@ -1,4 +1,5 @@
 import KImage from '@/lib/Image';
+import { AbcOutlined } from '@mui/icons-material';
 
 const NavMobile = () => {
   const navItems = [
@@ -16,7 +17,7 @@ const NavMobile = () => {
           <div key={index} className="flex-1 flex flex-col items-center">
             <div>{item}</div>
             <div>
-              <KImage.ICon icon="AbcOutlined" />
+              <KImage.ICon icon={AbcOutlined} />
             </div>
           </div>
         ))}
