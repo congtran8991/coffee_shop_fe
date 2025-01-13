@@ -1,4 +1,7 @@
 'use client';
+
+import { memo } from 'react';
+
 interface IProps {
   children: React.ReactNode;
   title: string;
@@ -25,4 +28,4 @@ const WrapTab = ({ children, title, isSubTab }: IProps) => {
   );
 };
 
-export default WrapTab;
+export default memo(WrapTab);

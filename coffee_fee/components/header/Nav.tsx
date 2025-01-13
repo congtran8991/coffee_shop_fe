@@ -1,4 +1,5 @@
 'use client';
+import { memo } from 'react';
 import { subTabAbout } from './menus/about';
 import { subTabDashboard } from './menus/dashboard';
 import { subTabMember } from './menus/member';
@@ -7,7 +8,6 @@ import { subTabProduct } from './menus/product';
 import { subTabPromotion } from './menus/promotion';
 import SubTab from './Nav.SubTab';
 import WrapTab from './Nav.WrapTab';
-import { Button, Typography } from '@mui/material';
 
 const menu = [
   {
@@ -60,4 +60,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default memo(Nav);

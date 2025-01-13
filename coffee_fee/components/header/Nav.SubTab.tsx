@@ -1,4 +1,7 @@
+'use client';
+
 import { ISubMenu } from '@/types/common';
+import { memo } from 'react';
 
 interface IProps {
   titleTab: string;
@@ -24,4 +27,4 @@ const SubTab = ({ titleTab, listSub }: IProps) => {
   );
 };
 
-export default SubTab;
+export default memo(SubTab);

@@ -2,6 +2,7 @@
 
 import useIsClientRender from '@/hooks/lib/useIsClientRender';
 import { useTheme } from 'next-themes';
+import { memo } from 'react';
 
 const TopHeader = () => {
   const { theme, setTheme } = useTheme();
@@ -41,4 +42,4 @@ const TopHeader = () => {
   );
 };
 
-export default TopHeader;
+export default memo(TopHeader);

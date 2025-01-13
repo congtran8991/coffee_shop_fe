@@ -1,5 +1,6 @@
 'use client';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux-toolkit';
+import KInput from '@/lib/Input';
 import { increase } from '@/stores/redux-toolkit/counter/slice';
 import { showToast } from '@/utils/common';
 import Image from 'next/image';
@@ -10,7 +11,7 @@ export default function Home() {
   const dispatch = useAppDispatch();
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+      {/* <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -55,7 +56,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-      </main>
+      </main> */}
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -118,6 +119,7 @@ export default function Home() {
           increase {count}
         </button>
       </footer>
+      <KInput.Base className="bg-primary" />
     </div>
   );
 }
