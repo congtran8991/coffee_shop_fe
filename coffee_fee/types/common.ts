@@ -16,6 +16,32 @@ export type ValidPaletteKeys = Exclude<PaletteKeys, undefined>;
 
 // test
 
+export type RootColors =
+  | '--primary-1'
+  | '--primary-2'
+  | '--primary-3'
+  | '--secondary-1'
+  | '--secondary-2'
+  | '--secondary-3'
+  | '--warning-1'
+  | '--warning-2'
+  | '--warning-3'
+  | '--border-1'
+  | '--border-2'
+  | '--border-3'
+  | '--danger-1'
+  | '--danger-2'
+  | '--danger-3'
+  | '--info-1'
+  | '--info-2'
+  | '--info-3'
+  | '--success-1'
+  | '--success-2'
+  | '--success-3'
+  | '--gray-1'
+  | '--gray-2'
+  | '--gray-3';
+
 export interface ISubMenu {
   key: number;
   title: string;

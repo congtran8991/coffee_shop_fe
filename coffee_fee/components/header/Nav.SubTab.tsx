@@ -11,12 +11,15 @@ interface IProps {
 const SubTab = ({ titleTab, listSub }: IProps) => {
   return (
     <div>
-      <h4 className="font-bold text-primary mb-2">{titleTab}</h4>
+      <h4 className="font-bold text-primary-moderate mb-2">{titleTab}</h4>
       {listSub.map((u) => {
         return (
           <ul className="space-y-2" key={u.key}>
             <li>
-              <a href="#" className="text-customGray-dark hover:text-primary">
+              <a
+                href="#"
+                className="text-customGray-dark hover:text-primary-moderate"
+              >
                 {u.title}
               </a>
             </li>

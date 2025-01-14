@@ -12,7 +12,7 @@ const WrapTab = ({ children, title, isSubTab }: IProps) => {
     <li className="px-8 py-2 text-customGray-normal focus:outline-none focus:text-white">
       <div className="relative group">
         {/* Menu chính */}
-        <button className="hover:text-primary">{title}</button>
+        <button className="hover:text-primary-moderate">{title}</button>
 
         {/* Menu con */}
         {isSubTab && (

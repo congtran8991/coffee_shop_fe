@@ -119,7 +119,7 @@ export default function Home() {
           increase {count}
         </button>
       </footer>
-      <KInput.Base className="bg-primary" />
+      <KInput.Base className="" />
     </div>
   );
 }

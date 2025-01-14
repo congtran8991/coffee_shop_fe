@@ -20,8 +20,16 @@ export default {
       colors: {
         // background: 'var(--background)',
         // foreground: 'var(--foreground)',
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
+        primary: {
+          mild: 'var(--primary-1)',
+          moderate: 'var(--primary-2)',
+          severe: 'var(--primary-3)',
+        },
+        secondary: {
+          mild: 'var(--secondary-1)',
+          moderate: 'var(--secondary-2)',
+          severe: 'var(--secondary-3)',
+        },
         warning: {
           mild: 'var(--warning-1)',
           moderate: 'var(--warning-2)',

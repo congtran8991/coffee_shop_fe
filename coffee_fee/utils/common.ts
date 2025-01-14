@@ -1,3 +1,6 @@
+'use client';
+
+import { RootColors } from '@/types/common';
 import { toast, ToastContent, ToastOptions, Slide, Id } from 'react-toastify';
 
 export const defaultToastOptions: ToastOptions = {
@@ -43,4 +46,14 @@ export const showToast = (
     default:
       return toast(content, optionsToApply);
   }
+};
+
+export const getColorRoot = (rootColor: RootColors) => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    // Không phải môi trường trình duyệt
+    return '';
+  }
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(rootColor)
+    .trim();
 };
