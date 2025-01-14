@@ -1,9 +1,19 @@
 'use client';
 
 import { ThemeProvider } from 'next-themes';
-<<<<<<< Updated upstream
 
-=======
+declare module '@mui/material/styles' {
+  interface Palette {
+    ['warning-mild']: Palette['warning'];
+    ['warning-severe']: Palette['warning'];
+  }
+
+  interface PaletteOptions {
+    ['warning-mild']?: PaletteOptions['warning'];
+    ['warning-severe']?: PaletteOptions['warning'];
+  }
+}
+
 import {
   createTheme,
   ThemeProvider as ThemeProviderMui,
@@ -132,7 +142,6 @@ const theme = createTheme({
   },
 });
 
->>>>>>> Stashed changes
 export default function Theme({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
@@ -140,7 +149,7 @@ export default function Theme({ children }: { children: React.ReactNode }) {
       defaultTheme="light"
       attribute="class"
     >
-      {children}
+      <ThemeProviderMui theme={theme}>{children}</ThemeProviderMui>
     </ThemeProvider>
   );
 }
