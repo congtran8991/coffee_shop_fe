@@ -1,12 +1,9 @@
-<<<<<<< Updated upstream
-=======
 'use client';
 
 import KImage from '@/lib/Image';
 import { AbcOutlined } from '@mui/icons-material';
 import { memo } from 'react';
 
->>>>>>> Stashed changes
 const NavMobile = () => {
   const navItems = [
     'Trang chủ',
@@ -22,12 +19,9 @@ const NavMobile = () => {
         {navItems.map((item, index) => (
           <div key={index} className="flex-1 flex flex-col items-center">
             <div>{item}</div>
-<<<<<<< Updated upstream
-=======
             <div>
               <KImage.ICon icon={AbcOutlined} className="text-danger-mild" />
             </div>
->>>>>>> Stashed changes
           </div>
         ))}
       </div>
