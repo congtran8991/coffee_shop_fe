@@ -30,11 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="light" lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <script src="../utils/generateColors.ts"></script> */}
         <ReduxToolkitProvider>
           <Theme>
             <ToastProvider>

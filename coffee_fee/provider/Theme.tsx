@@ -1,6 +1,6 @@
 'use client';
 
-import { ThemeProvider, useTheme } from 'next-themes';
+import { ThemeProvider } from 'next-themes';
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -69,78 +69,83 @@ export default function Theme({ children }: { children: React.ReactNode }) {
         },
         styleOverrides: {
           root: {
-            width: '100%', // Đặt chiều rộng của TextField là 100%
-            ':hover .MuiOutlinedInput-notchedOutline': {
-              border: '1px solid #d0190b',
-            },
-            '& .MuiInputBase-root': {
-              borderRadius: '8px', // Bo tròn góc của border
-              borderColor: '#007b45', // Màu của border
-            },
-            '& .MuiOutlinedInput-notchedOutline': {
-              borderColor: '#007b45', // Màu border khi chưa focus
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              borderColor: '#00ad5e', // Màu border khi hover
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: KColors.border.severe, // Màu border mặc định
+                borderWidth: '1px', // Độ dày của border
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: KColors.border.severe, // Màu border khi focus
+                borderWidth: '1px', // Độ dày border khi focus
+              },
+              '&.Mui-error fieldset': {
+                borderColor: '#f44336', // Màu border khi có lỗi (màu đỏ)
+                borderWidth: '1px', // Độ dày của border khi có lỗi
+              },
             },
             '& .MuiInputLabel-root': {
-              color: '#007b45', // Màu label
+              color: '#000000', // Màu label mặc định
             },
-            '& .MuiInputLabel-root.Mui-focused': {
-              color: '#00ad5e', // Màu label khi focus
+            // Khi có lỗi và focus
+            '&.Mui-error .MuiInputLabel-root.Mui-focused': {
+              color: '#f44336', // Màu label khi có lỗi và focus (màu đỏ)
+            },
+            // Khi có lỗi nhưng không focus
+            '&.Mui-error .MuiInputLabel-root': {
+              color: '#f44336', // Màu label khi có lỗi (màu đỏ)
             },
           },
         },
       },
     },
-    palette: {
-      mode: 'dark',
-      primary: {
-        main: '#00ad5e',
-      },
-      secondary: {
-        main: '#c91a25',
-      },
-      //warning
-      warning: {
-        main: '#ff9800', //moderate
-      },
-      'warning-mild': {
-        main: getColorRoot('--warning-1'),
-      },
-      'warning-moderate': {
-        main: '#ff9800',
-      },
-      'warning-severe': {
-        main: '#c27400',
-      },
-      //info
-      info: {
-        main: '#3995c5', //moderate
-      },
-      'info-mild': {
-        main: '#88bfdd',
-      },
-      'info-moderate': {
-        main: '#3995c5',
-      },
-      'info-severe': {
-        main: '#2c7196',
-      },
-      //success
-      success: {
-        main: '#41fd9a', //moderate
-      },
-      'success-mild': {
-        main: '#74fdbc',
-      },
-      'success-moderate': {
-        main: '#41fd9a',
-      },
-      'success-severe': {
-        main: '#2de27f',
-      },
-    },
+    // palette: {
+    //   mode: 'dark',
+    //   primary: {
+    //     main: '#00ad5e',
+    //   },
+    //   secondary: {
+    //     main: '#c91a25',
+    //   },
+    //   //warning
+    //   warning: {
+    //     main: '#ff9800', //moderate
+    //   },
+    //   'warning-mild': {
+    //     main: getColorRoot('--warning-1'),
+    //   },
+    //   'warning-moderate': {
+    //     main: '#ff9800',
+    //   },
+    //   'warning-severe': {
+    //     main: '#c27400',
+    //   },
+    //   //info
+    //   info: {
+    //     main: '#3995c5', //moderate
+    //   },
+    //   'info-mild': {
+    //     main: '#88bfdd',
+    //   },
+    //   'info-moderate': {
+    //     main: '#3995c5',
+    //   },
+    //   'info-severe': {
+    //     main: '#2c7196',
+    //   },
+    //   //success
+    //   success: {
+    //     main: '#41fd9a', //moderate
+    //   },
+    //   'success-mild': {
+    //     main: '#74fdbc',
+    //   },
+    //   'success-moderate': {
+    //     main: '#41fd9a',
+    //   },
+    //   'success-severe': {
+    //     main: '#2de27f',
+    //   },
+    // },
   });
 
   return (
