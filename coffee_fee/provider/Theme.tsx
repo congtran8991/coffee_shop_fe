@@ -79,7 +79,7 @@ export default function Theme({ children }: { children: React.ReactNode }) {
                 borderWidth: '1px', // Độ dày border khi focus
               },
               '&.Mui-error fieldset': {
-                borderColor: '#f44336', // Màu border khi có lỗi (màu đỏ)
+                borderColor: KColors.warning.moderate, // Màu border khi có lỗi (màu đỏ)
                 borderWidth: '1px', // Độ dày của border khi có lỗi
               },
             },
@@ -88,11 +88,11 @@ export default function Theme({ children }: { children: React.ReactNode }) {
             },
             // Khi có lỗi và focus
             '&.Mui-error .MuiInputLabel-root.Mui-focused': {
-              color: '#f44336', // Màu label khi có lỗi và focus (màu đỏ)
+              color: KColors.warning.moderate, // Màu label khi có lỗi và focus (màu đỏ)
             },
             // Khi có lỗi nhưng không focus
             '&.Mui-error .MuiInputLabel-root': {
-              color: '#f44336', // Màu label khi có lỗi (màu đỏ)
+              color: KColors.warning.moderate, // Màu label khi có lỗi (màu đỏ)
             },
           },
         },
