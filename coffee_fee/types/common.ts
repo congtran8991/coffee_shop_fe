@@ -52,3 +52,14 @@ export interface ISubTab {
   titleTab: string;
   listSub: ISubMenu[];
 }
+
+export interface KInputProps {
+  className: string;
+  label?: string;
+  onChange?: (v?: any) => void;
+  onFocus?: (v?: any) => void;
+  value?: any;
+  message?: string;
+  size: 'small' | 'medium';
+  name?: string;
+}
