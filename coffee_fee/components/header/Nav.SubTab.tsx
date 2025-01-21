@@ -18,7 +18,7 @@ const SubTab = ({ titleTab, listSub }: IProps) => {
             <li>
               <a
                 href="#"
-                className="text-customGray-dark hover:text-primary-moderate"
+                className="text-customGray-severe hover:text-primary-moderate"
               >
                 {u.title}
               </a>

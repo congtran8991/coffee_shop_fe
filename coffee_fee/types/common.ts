@@ -2,7 +2,7 @@ export interface A {
   s: string;
 }
 
-import { Theme } from '@mui/material/styles';
+import { SxProps, Theme } from '@mui/material/styles';
 
 // Lấy kiểu tất cả các key trong theme.palette
 type PaletteKeys = keyof Theme['palette'];
@@ -54,12 +54,14 @@ export interface ISubTab {
 }
 
 export interface KInputProps {
-  className: string;
+  className?: string;
   label?: string;
   onChange?: (v?: any) => void;
   onFocus?: (v?: any) => void;
   value?: any;
   message?: string;
-  size: 'small' | 'medium';
+  size?: 'small' | 'medium';
   name?: string;
+  error?: boolean;
+  sx?: SxProps;
 }

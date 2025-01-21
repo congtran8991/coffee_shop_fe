@@ -120,7 +120,8 @@ export default function Home() {
           increase {count}
         </button>
       </footer>
-      <KInput.Base className="" />
+      <div className="text-primary-moderate">sdjvsjvs</div>
+      <KInput.Base name="test" label="Text" />
     </div>
   );
 }

@@ -2,18 +2,6 @@
 
 import { ThemeProvider } from 'next-themes';
 
-declare module '@mui/material/styles' {
-  interface Palette {
-    ['warning-mild']: Palette['warning'];
-    ['warning-severe']: Palette['warning'];
-  }
-
-  interface PaletteOptions {
-    ['warning-mild']?: PaletteOptions['warning'];
-    ['warning-severe']?: PaletteOptions['warning'];
-  }
-}
-
 import {
   createTheme,
   ThemeProvider as ThemeProviderMui,
@@ -21,9 +9,18 @@ import {
 // import { getColorRoot } from '@/utils/common';
 import KColors from '@/constants/colors';
 import { getColorRoot } from '@/utils/common';
+import useIsClientRender from '@/hooks/lib/useIsClientRender';
 
 declare module '@mui/material/styles' {
   interface Palette {
+    ['primary-mild']: Palette['primary'];
+    ['primary-moderate']: Palette['primary'];
+    ['primary-severe']: Palette['primary'];
+
+    ['secondary-mild']: Palette['secondary'];
+    ['secondary-moderate']: Palette['secondary'];
+    ['secondary-severe']: Palette['secondary'];
+
     ['warning-mild']: Palette['warning'];
     ['warning-moderate']: Palette['warning'];
     ['warning-severe']: Palette['warning'];
@@ -42,6 +39,14 @@ declare module '@mui/material/styles' {
   }
 
   interface PaletteOptions {
+    ['primary-mild']?: PaletteOptions['primary'];
+    ['primary-moderate']?: PaletteOptions['primary'];
+    ['primary-severe']?: PaletteOptions['primary'];
+
+    ['secondary-mild']?: PaletteOptions['secondary'];
+    ['secondary-moderate']?: PaletteOptions['secondary'];
+    ['secondary-severe']?: PaletteOptions['secondary'];
+
     ['warning-mild']?: PaletteOptions['warning'];
     ['warning-moderate']?: PaletteOptions['warning'];
     ['warning-severe']?: PaletteOptions['warning'];
@@ -61,6 +66,10 @@ declare module '@mui/material/styles' {
 }
 
 export default function Theme({ children }: { children: React.ReactNode }) {
+  const isClient = useIsClientRender();
+  if (!isClient) {
+    return null;
+  }
   const theme = createTheme({
     components: {
       MuiTextField: {
@@ -86,6 +95,9 @@ export default function Theme({ children }: { children: React.ReactNode }) {
             '& .MuiInputLabel-root': {
               color: '#000000', // Màu label mặc định
             },
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#000000', // Màu label mặc định
+            },
             // Khi có lỗi và focus
             '&.Mui-error .MuiInputLabel-root.Mui-focused': {
               color: KColors.warning.moderate, // Màu label khi có lỗi và focus (màu đỏ)
@@ -98,54 +110,72 @@ export default function Theme({ children }: { children: React.ReactNode }) {
         },
       },
     },
-    // palette: {
-    //   mode: 'dark',
-    //   primary: {
-    //     main: '#00ad5e',
-    //   },
-    //   secondary: {
-    //     main: '#c91a25',
-    //   },
-    //   //warning
-    //   warning: {
-    //     main: '#ff9800', //moderate
-    //   },
-    //   'warning-mild': {
-    //     main: getColorRoot('--warning-1'),
-    //   },
-    //   'warning-moderate': {
-    //     main: '#ff9800',
-    //   },
-    //   'warning-severe': {
-    //     main: '#c27400',
-    //   },
-    //   //info
-    //   info: {
-    //     main: '#3995c5', //moderate
-    //   },
-    //   'info-mild': {
-    //     main: '#88bfdd',
-    //   },
-    //   'info-moderate': {
-    //     main: '#3995c5',
-    //   },
-    //   'info-severe': {
-    //     main: '#2c7196',
-    //   },
-    //   //success
-    //   success: {
-    //     main: '#41fd9a', //moderate
-    //   },
-    //   'success-mild': {
-    //     main: '#74fdbc',
-    //   },
-    //   'success-moderate': {
-    //     main: '#41fd9a',
-    //   },
-    //   'success-severe': {
-    //     main: '#2de27f',
-    //   },
-    // },
+    palette: {
+      // mode: 'light',
+      primary: {
+        main: getColorRoot('--primary-2'),
+      },
+      'primary-mild': {
+        main: getColorRoot('--primary-1'),
+      },
+      'primary-moderate': {
+        main: getColorRoot('--primary-2'),
+      },
+      'primary-severe': {
+        main: getColorRoot('--primary-3'),
+      },
+      secondary: {
+        main: getColorRoot('--secondary-2'),
+      },
+      'secondary-mild': {
+        main: getColorRoot('--secondary-1'),
+      },
+      'secondary-moderate': {
+        main: getColorRoot('--secondary-2'),
+      },
+      'secondary-severe': {
+        main: getColorRoot('--secondary-3'),
+      },
+      //warning
+      warning: {
+        main: getColorRoot('--warning-2'), //moderate
+      },
+      'warning-mild': {
+        main: getColorRoot('--warning-1'),
+      },
+      'warning-moderate': {
+        main: getColorRoot('--warning-2'),
+      },
+      'warning-severe': {
+        main: getColorRoot('--warning-3'),
+      },
+      //info
+      info: {
+        main: getColorRoot('--info-2'), //moderate
+      },
+      'info-mild': {
+        main: getColorRoot('--info-1'),
+      },
+      'info-moderate': {
+        main: getColorRoot('--info-2'),
+      },
+      'info-severe': {
+        main: getColorRoot('--info-3'),
+      },
+      //success
+      success: {
+        main: getColorRoot('--success-2'), //moderate
+      },
+      'success-mild': {
+        main: getColorRoot('--success-1'),
+      },
+      'success-moderate': {
+        main: getColorRoot('--success-2'),
+      },
+      'success-severe': {
+        main: getColorRoot('--success-3'),
+      },
+    },
   });
 
   return (

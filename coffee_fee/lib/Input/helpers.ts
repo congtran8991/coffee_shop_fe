@@ -1,14 +1,19 @@
-import useCombineRefs from '@/hooks/lib/\buseCombineRef';
+import useCombineRefs from '@/hooks/lib/useCombineRef';
 import { KInputProps } from '@/types/common';
+import { useRef } from 'react';
 
 export const useInputProps = (
   props: KInputProps,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) => {
-  const { className, size, label, message, value, name, onChange, onFocus } =
-    props;
+  const { message, error, size = 'small', ...rest } = props;
+  const innerRef = useRef<HTMLInputElement>(null);
+  const combineRefs = useCombineRefs<HTMLInputElement>(ref, innerRef);
 
-  const refs = useCombineRefs(ref);
-
-  return {};
+  return {
+    combineRefs,
+    size,
+    helperText: !!message || error,
+    ...rest,
+  };
 };

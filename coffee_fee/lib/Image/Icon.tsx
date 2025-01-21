@@ -16,7 +16,7 @@ const KICon: React.FC<IProps> = ({ icon: IconComponent, style, ...rest }) => {
     return null;
   }
 
-  return <IconComponent {...rest} style={style} />;
+  return <IconComponent {...rest} style={style} color="primary" />;
 };
 
 export default memo(KICon);
