@@ -1,8 +1,10 @@
 'use client';
+
 import { useAppDispatch, useAppSelector } from '@/hooks/redux-toolkit';
 import KInput from '@/lib/Input';
 import { increase } from '@/stores/redux-toolkit/counter/slice';
 import { showToast } from '@/utils/common';
+
 import Image from 'next/image';
 
 export default function Home() {
@@ -121,7 +123,12 @@ export default function Home() {
         </button>
       </footer>
       <div className="text-primary-moderate">sdjvsjvs</div>
-      <KInput.Base name="test" label="Text" />
+      <KInput.Base
+        name="test"
+        label="Text"
+        message="shhsvh"
+        // sx={{ color: KColors.primary.moderate }}
+      />
     </div>
   );
 }

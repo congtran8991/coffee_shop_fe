@@ -1,5 +1,3 @@
-'use client';
-
 import { RootColors } from '@/types/common';
 
 const brand: Record<
@@ -10,9 +8,11 @@ const brand: Record<
   | 'danger'
   | 'info'
   | 'success'
-  | 'customGray',
-  Record<'mild' | 'moderate' | 'severe', any>
+  | 'customGray'
+  | 'defaultTextColor',
+  Record<'mild' | 'moderate' | 'severe', `var(${RootColors})`>
 > = {
+  defaultTextColor: 'var(--default-text-color)' as any,
   primary: {
     mild: 'var(--primary-1)',
     moderate: 'var(--primary-2)',

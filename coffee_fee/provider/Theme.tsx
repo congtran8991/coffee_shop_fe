@@ -87,24 +87,28 @@ export default function Theme({ children }: { children: React.ReactNode }) {
                 borderColor: KColors.border.severe, // Màu border khi focus
                 borderWidth: '1px', // Độ dày border khi focus
               },
+              '&:hover fieldset': {
+                borderColor: KColors.defaultTextColor, // Màu viền khi hover
+              },
               '&.Mui-error fieldset': {
-                borderColor: KColors.warning.moderate, // Màu border khi có lỗi (màu đỏ)
+                borderColor: KColors.danger.moderate, // Màu border khi có lỗi (màu đỏ)
                 borderWidth: '1px', // Độ dày của border khi có lỗi
               },
+              '& .MuiInputBase-input': {
+                color: KColors.defaultTextColor, // Màu chữ input
+              },
             },
+
             '& .MuiInputLabel-root': {
-              color: '#000000', // Màu label mặc định
+              color: KColors.defaultTextColor, // Màu label mặc định
             },
             '& .MuiInputLabel-root.Mui-focused': {
-              color: '#000000', // Màu label mặc định
-            },
-            // Khi có lỗi và focus
-            '&.Mui-error .MuiInputLabel-root.Mui-focused': {
-              color: KColors.warning.moderate, // Màu label khi có lỗi và focus (màu đỏ)
-            },
-            // Khi có lỗi nhưng không focus
-            '&.Mui-error .MuiInputLabel-root': {
-              color: KColors.warning.moderate, // Màu label khi có lỗi (màu đỏ)
+              // Màu label focus
+              color: KColors.defaultTextColor,
+              '&.Mui-error': {
+                // Màu label focus có lỗi
+                color: KColors.danger.moderate,
+              },
             },
           },
         },

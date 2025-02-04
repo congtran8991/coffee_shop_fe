@@ -17,6 +17,7 @@ export type ValidPaletteKeys = Exclude<PaletteKeys, undefined>;
 // test
 
 export type RootColors =
+  | '--default-text-color'
   | '--primary-1'
   | '--primary-2'
   | '--primary-3'
@@ -42,6 +43,8 @@ export type RootColors =
   | '--gray-2'
   | '--gray-3';
 
+export type ToastType = 'success' | 'error' | 'info' | 'warning' | 'default';
+
 export interface ISubMenu {
   key: number;
   title: string;
@@ -58,10 +61,11 @@ export interface KInputProps {
   label?: string;
   onChange?: (v?: any) => void;
   onFocus?: (v?: any) => void;
-  value?: any;
+  value?: string;
   message?: string;
   size?: 'small' | 'medium';
   name?: string;
   error?: boolean;
   sx?: SxProps;
+  fullWidth?: boolean;
 }

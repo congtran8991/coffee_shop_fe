@@ -6,14 +6,16 @@ export const useInputProps = (
   props: KInputProps,
   ref: React.ForwardedRef<HTMLInputElement>,
 ) => {
-  const { message, error, size = 'small', ...rest } = props;
+  const { message, error, size = 'small', fullWidth, ...rest } = props;
   const innerRef = useRef<HTMLInputElement>(null);
   const combineRefs = useCombineRefs<HTMLInputElement>(ref, innerRef);
 
   return {
     combineRefs,
     size,
-    helperText: !!message || error,
+    error: !!message || error,
+    helperText: message,
+    fullWidth,
     ...rest,
   };
 };

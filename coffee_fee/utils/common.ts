@@ -1,6 +1,6 @@
 'use client';
 
-import { RootColors } from '@/types/common';
+import { RootColors, ToastType } from '@/types/common';
 import { toast, ToastContent, ToastOptions, Slide, Id } from 'react-toastify';
 
 export const defaultToastOptions: ToastOptions = {
@@ -14,8 +14,6 @@ export const defaultToastOptions: ToastOptions = {
   theme: 'colored',
   transition: Slide,
 };
-
-type ToastType = 'success' | 'error' | 'info' | 'warning' | 'default';
 
 /**
  * Display toast

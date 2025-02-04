@@ -11,9 +11,9 @@ const BaseInput = React.forwardRef<HTMLInputElement, KInputProps>(
     return (
       <TextField
         id={name}
-        color="primary"
+        color="info"
         inputRef={combineRefs}
-        // slotProps={{ input: { sx } }}
+        slotProps={{ input: { sx } }}
         {...rest}
       />
     );

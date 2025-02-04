@@ -5,6 +5,7 @@
 :root {
   /* --background: #ffffff;
   --foreground: #171717; */
+  --default-text-color: #000000;
 
   --primary-1: #00ad5e;
   --primary-2: #00ad5e;
@@ -49,6 +50,7 @@
 .dark {
   /* --background: #0a0a0a;
     --foreground: #ededed; */
+  --default-text-color: #ffffff;
 
   --primary-1: #00ad5e;
   --primary-2: #c91a25;
