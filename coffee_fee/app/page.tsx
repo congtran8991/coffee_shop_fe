@@ -6,10 +6,11 @@ import { increase } from '@/stores/redux-toolkit/counter/slice';
 import { showToast } from '@/utils/common';
 
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const count = useAppSelector((state) => state.abc.count);
-
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   return (
@@ -122,7 +123,7 @@ export default function Home() {
           increase {count}
         </button>
       </footer>
-      <div className="text-primary-moderate">sdjvsjvs</div>
+      <div className="text-primary-moderate">{t('greeting')}</div>
       <KInput.Base
         name="test"
         label="Text"
