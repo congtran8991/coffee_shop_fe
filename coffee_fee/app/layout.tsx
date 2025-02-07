@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 // import { Inter } from 'next/font/google';
 import Header from '@/components/header';
-import Footer from '@/components/Footer';
+// import Footer from '@/components/Footer';
 import ToastProvider from '@/components/ToastProvider';
 import ReduxToolkitProvider from '@/provider/ReduxToolkit';
 import Theme from '@/provider/Theme';
@@ -27,13 +27,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
 }>) {
   return (
-    <html lang={locale} className="light">
+    <html className="light" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

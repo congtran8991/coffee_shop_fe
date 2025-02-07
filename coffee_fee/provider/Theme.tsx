@@ -1,6 +1,6 @@
 'use client';
 
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider as ThemeProviderNext } from 'next-themes';
 
 import {
   createTheme,
@@ -66,10 +66,10 @@ declare module '@mui/material/styles' {
 }
 
 export default function Theme({ children }: { children: React.ReactNode }) {
-  const isClient = useIsClientRender();
-  if (!isClient) {
-    return null;
-  }
+  // const isClient = useIsClientRender();
+  // if (!isClient) {
+  //   return null;
+  // }
   const theme = createTheme({
     components: {
       MuiTextField: {
@@ -183,12 +183,12 @@ export default function Theme({ children }: { children: React.ReactNode }) {
   });
 
   return (
-    <ThemeProvider
+    <ThemeProviderNext
       themes={['light', 'dark']}
-      defaultTheme="light"
+      // defaultTheme="light"
       attribute="class"
     >
       <ThemeProviderMui theme={theme}>{children}</ThemeProviderMui>
-    </ThemeProvider>
+    </ThemeProviderNext>
   );
 }
