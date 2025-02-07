@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   //   localeDetection: false, // Tắt tự động phát hiện ngôn ngữ
   // },
   // reloadOnPrerender: true,
+
   reactStrictMode: true,
 };
 

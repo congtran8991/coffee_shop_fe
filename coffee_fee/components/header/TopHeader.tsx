@@ -38,7 +38,7 @@ const TopHeader = () => {
           </div>
           <div>{localStorage.getItem('i18nextLng')}</div>
           <div>chọn phương thức nhận hàng</div>
-          <div>hộp thư</div>
+          <div>hộp thư 1234</div>
           <div>account</div>
         </div>
       </div>

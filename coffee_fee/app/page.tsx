@@ -122,7 +122,7 @@ export default function Home() {
           increase {count}
         </button>
       </footer>
-      <div className="text-primary-moderate">{t('greeting')}</div>
+      <div className="text-primary-moderate">{t('greeting')}wfw11</div>
       <button
         onClick={() =>
           i18n.changeLanguage(i18n.language === 'en' ? 'vi' : 'en')
