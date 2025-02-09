@@ -20,7 +20,7 @@ const TopHeader = () => {
     <div className="border-b-2 text-customGray-moderate border-bord">
       <div className="container flex justify-between items-center h-16 ">
         <div className="flex">
-          <div>Logo</div>
+          <div>Logo123</div>
           <div>Search</div>
         </div>
         <div className="flex">

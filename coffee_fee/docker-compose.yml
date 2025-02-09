@@ -13,4 +13,4 @@ services:
     volumes:
       - .:/app
       - /app/node_modules # Tránh lỗi ghi đè node_modules từ máy host
-    command: ['npm', 'start']
+    command: yarn dev
