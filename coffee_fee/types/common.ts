@@ -69,3 +69,9 @@ export interface KInputProps {
   sx?: SxProps;
   fullWidth?: boolean;
 }
+
+export interface IPopupProps {
+  open: () => void;
+  dismiss: () => void;
+  dismissAll: () => void;
+}

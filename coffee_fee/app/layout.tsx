@@ -9,6 +9,7 @@ import ToastProvider from '@/components/ToastProvider';
 import ReduxToolkitProvider from '@/provider/ReduxToolkit';
 import Theme from '@/provider/Theme';
 import { I18nProvider } from '@/provider/I18n';
+import KPortal from '@/containers/portal';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,6 +40,7 @@ export default function RootLayout({
           <ReduxToolkitProvider>
             <Theme>
               <ToastProvider>
+                <KPortal />
                 <Header />
                 {children}
                 {/* <Footer /> */}

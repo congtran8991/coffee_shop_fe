@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/hooks/redux-toolkit';
 import KInput from '@/lib/Input';
 import { increase } from '@/stores/redux-toolkit/counter/slice';
 import { showToast } from '@/utils/common';
+import PortalHandle from '@/utils/portal';
 
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
@@ -129,6 +130,13 @@ export default function Home() {
         }
       >
         {i18n.language === 'en' ? 'Đổi sang Tiếng Việt' : 'Switch to English'}
+      </button>
+      <button
+        onClick={() => {
+          PortalHandle.popup.open({});
+        }}
+      >
+        Call Popup
       </button>
       <KInput.Base
         name="test"
