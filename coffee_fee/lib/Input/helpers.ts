@@ -1,6 +1,20 @@
 import useCombineRefs from '@/hooks/lib/useCombineRef';
-import { KInputProps } from '@/types/common';
+import { SxProps } from '@mui/material';
 import { useRef } from 'react';
+
+export interface KInputProps {
+  className?: string;
+  label?: string;
+  onChange?: (v?: any) => void;
+  onFocus?: (v?: any) => void;
+  value?: string;
+  message?: string;
+  size?: 'small' | 'medium';
+  name?: string;
+  error?: boolean;
+  sx?: SxProps;
+  fullWidth?: boolean;
+}
 
 export const useInputProps = (
   props: KInputProps,

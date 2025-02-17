@@ -1,14 +1,15 @@
 import { popupRef } from '@/constants';
+import { IPopupProps } from '@/containers/portal/helpers';
 
 export default class PortalHandle {
   static readonly popup = {
-    open: (payload: any) => {
-      popupRef.current?.open();
+    open: (payload: IPopupProps) => {
+      popupRef.current?.open(payload);
     },
-    dismiss: (payload: any) => {
+    dismiss: () => {
       popupRef.current?.dismiss();
     },
-    dismissAll: (payload: any) => {
+    dismissAll: () => {
       popupRef.current?.dismissAll();
     },
   };

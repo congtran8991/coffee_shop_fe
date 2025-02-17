@@ -1,4 +1,4 @@
-import { IPopupProps } from '@/types/common';
+import { IPopupDialogProps } from '@/containers/portal/helpers';
 import { createRef } from 'react';
 
-export const popupRef = createRef<IPopupProps>();
+export const popupRef = createRef<IPopupDialogProps>();

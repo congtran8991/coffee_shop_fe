@@ -55,23 +55,3 @@ export interface ISubTab {
   titleTab: string;
   listSub: ISubMenu[];
 }
-
-export interface KInputProps {
-  className?: string;
-  label?: string;
-  onChange?: (v?: any) => void;
-  onFocus?: (v?: any) => void;
-  value?: string;
-  message?: string;
-  size?: 'small' | 'medium';
-  name?: string;
-  error?: boolean;
-  sx?: SxProps;
-  fullWidth?: boolean;
-}
-
-export interface IPopupProps {
-  open: () => void;
-  dismiss: () => void;
-  dismissAll: () => void;
-}

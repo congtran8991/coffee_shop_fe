@@ -133,7 +133,18 @@ export default function Home() {
       </button>
       <button
         onClick={() => {
-          PortalHandle.popup.open({});
+          PortalHandle.popup.open({
+            title: 'popup',
+            maxWidth: 'sm',
+            content: () => {
+              return (
+                <div>
+                  12scscscscscscscs34 12scscscscscscscs34 12scscscscscscscs34
+                  12scscscscscscscs34 12scscscscscscscs34 12scscscscscscscs34
+                </div>
+              );
+            },
+          });
         }}
       >
         Call Popup

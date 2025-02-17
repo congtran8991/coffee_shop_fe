@@ -1,9 +1,8 @@
 'use client';
 
-import { KInputProps } from '@/types/common';
 import { TextField } from '@mui/material';
 import React, { memo } from 'react';
-import { useInputProps } from './helpers';
+import { KInputProps, useInputProps } from './helpers';
 
 const BaseInput = React.forwardRef<HTMLInputElement, KInputProps>(
   (props, ref) => {
