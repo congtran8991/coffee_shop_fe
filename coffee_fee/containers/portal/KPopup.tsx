@@ -45,7 +45,7 @@ const KPopup = React.forwardRef<IPopupDialogProps>((_, ref) => {
             <DialogTitle
               borderBottom={'1px solid var(--gray-1)'}
               borderColor={KColors.border.moderate}
-              sx={{ m: 0, p: 2, pl: 3 }}
+              sx={{ m: 0, p: 1.5, pl: 2 }}
             >
               <div className="flex-between">
                 <div> {item?.title}</div>
