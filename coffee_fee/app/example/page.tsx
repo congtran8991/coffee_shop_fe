@@ -14,6 +14,12 @@ import { useResolverForm } from '@/hooks/lib/useResolverForm';
 import { Controller } from 'react-hook-form';
 import Grid from '@mui/material/Grid2';
 import { Button } from '@mui/material';
+import KButtons from '@/lib/Button';
+import { useRef } from 'react';
+import KColors from '@/constants/colors';
+import KImage from '@/lib/Image';
+
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 
 export default function Home() {
   const count = useAppSelector((state) => state.abc.count);
@@ -29,6 +35,8 @@ export default function Home() {
       },
     },
   });
+
+  const refe = useRef<any>('');
 
   return (
     <div
@@ -57,12 +65,7 @@ export default function Home() {
 
       <div>{localStorage.getItem('i18nextLng')}</div>
 
-      <KForm
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log('submit');
-        }}
-      >
+      <KForm onSubmit={methods.handleSubmit(() => {})}>
         <Grid maxWidth={'400px'} container spacing={2}>
           <Grid size={{ xs: 12 }}>
             <Controller
@@ -85,9 +88,16 @@ export default function Home() {
           </Grid>
 
           <Grid size={{ xs: 12 }} textAlign={'center'}>
-            <Button variant="contained" type="submit">
-              Submit
-            </Button>
+            <KButtons.ICon
+              margin="10rem"
+              startIcon={<SendOutlinedIcon />}
+              variant="contained"
+              size="medium"
+              bgC={KColors.danger.mild}
+              color={KColors.white}
+              isLoading={false}
+              type="submit"
+            />
           </Grid>
         </Grid>
       </KForm>
