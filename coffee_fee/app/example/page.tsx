@@ -13,13 +13,14 @@ import { useTranslation } from 'react-i18next';
 import { useResolverForm } from '@/hooks/lib/useResolverForm';
 import { Controller } from 'react-hook-form';
 import Grid from '@mui/material/Grid2';
-import { Button } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 import KButtons from '@/lib/Button';
 import { useRef } from 'react';
 import KColors from '@/constants/colors';
 import KImage from '@/lib/Image';
 
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import KText from '@/lib/Text';
 
 export default function Home() {
   const count = useAppSelector((state) => state.abc.count);
@@ -35,8 +36,6 @@ export default function Home() {
       },
     },
   });
-
-  const refe = useRef<any>('');
 
   return (
     <div
@@ -89,7 +88,6 @@ export default function Home() {
 
           <Grid size={{ xs: 12 }} textAlign={'center'}>
             <KButtons.ICon
-              margin="10rem"
               startIcon={<SendOutlinedIcon />}
               variant="contained"
               size="medium"
@@ -101,6 +99,12 @@ export default function Home() {
           </Grid>
         </Grid>
       </KForm>
+      <Stack direction="row">
+        <KText.Base marginR="0.25rem" fontWeight={'200'}>
+          s vsvs
+        </KText.Base>
+        <KText.Base>svsvs</KText.Base>
+      </Stack>
     </div>
   );
 }

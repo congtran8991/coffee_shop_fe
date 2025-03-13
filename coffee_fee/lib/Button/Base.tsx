@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import Button from '@mui/material/Button';
 import { KButtonProps } from './helpers';
 import { useSpacingHelper } from '../common';
-import { pick } from 'lodash';
+
 const BasicButtons = React.forwardRef<HTMLButtonElement, KButtonProps>(
   (props, ref) => {
     const {

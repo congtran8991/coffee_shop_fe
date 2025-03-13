@@ -20,7 +20,31 @@ export type SizeSpacing =
   | '14rem'
   | '16rem';
 
-export interface KSpacing {
+export type SizeText =
+  | '0.25rem'
+  | '0.5rem'
+  | '0.75'
+  | '1rem'
+  | '1.25rem'
+  | '1.5rem'
+  | '1.75rem'
+  | '2rem'
+  | '2.25rem'
+  | '2.5rem';
+
+export type TypeWeight =
+  | '100'
+  | '200'
+  | '300'
+  | '400'
+  | '500'
+  | '600'
+  | '700'
+  | '800'
+  | '900'
+  | 'bold';
+
+export interface TypeSpacing {
   margin?: SizeSpacing;
   marginX?: SizeSpacing;
   marginY?: SizeSpacing;

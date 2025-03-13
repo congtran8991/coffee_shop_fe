@@ -1,6 +1,6 @@
-import { KSpacing } from '@/constants/spacing';
+import { TypeSpacing } from '@/constants/spacing';
 
-export const useSpacingHelper = (props: KSpacing) => {
+export const useSpacingHelper = (props: TypeSpacing) => {
   const {
     margin,
     marginL,
