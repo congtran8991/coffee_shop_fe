@@ -1,5 +1,6 @@
 'use client';
 
+import KContainer from '@/lib/Container';
 // import useHydratedData from '@/hooks/lib/useHydratedData';
 // import useIsClientRender from '@/hooks/lib/useIsClientRender';
 import { useTheme } from 'next-themes';
@@ -17,15 +18,15 @@ const TopHeader = () => {
   // }
 
   return (
-    <div className="border-b-2 text-customGray-moderate border-bord">
-      <div className="container flex justify-between items-center h-16 ">
-        <div className="flex">
-          <div>Logo123</div>
-          <div>Search</div>
-        </div>
-        <div className="flex">
-          <div
-            onClick={() => {
+    <KContainer.View className="border-b-2 text-customGray-moderate border-bord">
+      <KContainer.View className="container flex justify-between items-center h-16 ">
+        <KContainer.View className="flex">
+          <KContainer.View>Logo123</KContainer.View>
+          <KContainer.View>Search</KContainer.View>
+        </KContainer.View>
+        <KContainer.View className="flex">
+          <KContainer.View
+            onPress={() => {
               setTheme((v) => {
                 if (v === 'dark') {
                   return 'light';
@@ -35,14 +36,16 @@ const TopHeader = () => {
             }}
           >
             Theme: {theme}
-          </div>
-          <div>{localStorage.getItem('i18nextLng')}</div>
-          <div>chọn phương thức nhận hàng</div>
-          <div>hộp thư 1234</div>
-          <div>account</div>
-        </div>
-      </div>
-    </div>
+          </KContainer.View>
+          <KContainer.View>
+            {localStorage.getItem('i18nextLng')}
+          </KContainer.View>
+          <KContainer.View>chọn phương thức nhận hàng</KContainer.View>
+          <KContainer.View>hộp thư 1234</KContainer.View>
+          <KContainer.View>account</KContainer.View>
+        </KContainer.View>
+      </KContainer.View>
+    </KContainer.View>
   );
 };
 

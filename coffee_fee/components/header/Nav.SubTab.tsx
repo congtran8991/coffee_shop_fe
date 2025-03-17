@@ -1,6 +1,10 @@
 'use client';
 
+import KColors from '@/constants/colors';
+import KContainer from '@/lib/Container';
+import KText from '@/lib/Text';
 import { ISubMenu } from '@/types/common';
+import Link from 'next/link';
 import { memo } from 'react';
 
 interface IProps {
@@ -10,8 +14,15 @@ interface IProps {
 
 const SubTab = ({ titleTab, listSub }: IProps) => {
   return (
-    <div>
-      <h4 className="font-bold text-primary-moderate mb-2">{titleTab}</h4>
+    <KContainer.View>
+      <KText.Base
+        variant="h4"
+        fontWeight="700"
+        color={KColors.primary.moderate}
+        mrB="0.5rem"
+      >
+        {titleTab}
+      </KText.Base>
       {listSub.map((u) => {
         return (
           <ul className="space-y-2" key={u.key}>
@@ -26,7 +37,7 @@ const SubTab = ({ titleTab, listSub }: IProps) => {
           </ul>
         );
       })}
-    </div>
+    </KContainer.View>
   );
 };
 

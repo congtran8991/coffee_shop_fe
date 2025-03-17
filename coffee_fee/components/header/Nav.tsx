@@ -12,26 +12,32 @@ import WrapTab from './Nav.WrapTab';
 const menu = [
   {
     title: 'Dashboard',
+    path: '/',
     subMenu: subTabDashboard,
   },
   {
     title: 'Menu',
+    path: '/',
     subMenu: subTabMenu,
   },
   {
     title: 'Sản phẩm đóng gói',
+    path: '/',
     subMenu: subTabProduct,
   },
   {
     title: 'Về chúng tôi',
+    path: '/',
     subMenu: subTabAbout,
   },
   {
     title: 'Khuyến mãi',
+    path: '/',
     subMenu: subTabPromotion,
   },
   {
     title: 'Hội viên',
+    path: '/',
     subMenu: subTabMember,
   },
 ];

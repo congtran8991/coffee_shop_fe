@@ -1,16 +1,12 @@
+'use client';
 import { TypeKColors } from '@/constants/colors';
 import { SizeText, TypeSpacing, TypeWeight } from '@/constants/spacing';
 import { Typography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/system';
 import { memo } from 'react';
-import { useSpacingHelper } from '../common';
+import styleHelper from '../common';
 
-interface CustomTextProps
-  extends TypeSpacing,
-    Omit<
-      TypographyProps,
-      'margin' | 'marginX' | 'marginY' | 'padding' | 'paddingX' | 'paddingY'
-    > {
+interface CustomTextProps extends TypeSpacing, Omit<TypographyProps, 'mr'> {
   variant?:
     | 'body1'
     | 'body2'
@@ -42,25 +38,8 @@ const StyledTypography = styled(Typography)<CustomTextProps>(
 );
 
 const TextBase: React.FC<CustomTextProps> = ({ children, ...props }) => {
-  const {
-    margin,
-    marginL,
-    marginR,
-    marginT,
-    marginB,
-    marginX,
-    marginY,
-    padding,
-    paddingL,
-    paddingR,
-    paddingT,
-    paddingB,
-    paddingX,
-    paddingY,
-    ...rest
-  } = props;
-  const spacing = useSpacingHelper(props);
-  const _props = { ...rest, ...spacing };
+  const { spacing, remaining } = styleHelper.destructSpacing(props);
+  const _props = { ...remaining, ...spacing };
   return <StyledTypography {..._props}>{children}</StyledTypography>;
 };
 

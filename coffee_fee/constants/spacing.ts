@@ -45,18 +45,54 @@ export type TypeWeight =
   | 'bold';
 
 export interface TypeSpacing {
-  margin?: SizeSpacing;
-  marginX?: SizeSpacing;
-  marginY?: SizeSpacing;
-  marginL?: SizeSpacing;
-  marginR?: SizeSpacing;
-  marginT?: SizeSpacing;
-  marginB?: SizeSpacing;
-  padding?: SizeSpacing;
-  paddingX?: SizeSpacing;
-  paddingY?: SizeSpacing;
-  paddingL?: SizeSpacing;
-  paddingR?: SizeSpacing;
-  paddingT?: SizeSpacing;
-  paddingB?: SizeSpacing;
+  mr?: SizeSpacing;
+  mrX?: SizeSpacing;
+  mrY?: SizeSpacing;
+  mrL?: SizeSpacing;
+  mrR?: SizeSpacing;
+  mrT?: SizeSpacing;
+  mrB?: SizeSpacing;
+  pd?: SizeSpacing;
+  pdX?: SizeSpacing;
+  pdY?: SizeSpacing;
+  pdL?: SizeSpacing;
+  pdR?: SizeSpacing;
+  pdT?: SizeSpacing;
+  pdB?: SizeSpacing;
+}
+
+export interface TypeLayout {
+  dp?: 'inline' | 'block' | 'flex' | 'inline-block' | 'inline-flex' | 'none';
+  flex?: number | true; // flex value, if flex === true, it means flex = 1
+  flexS?: number; // flexShirk
+  flexG?: number; // flexGrow
+  flexW?: 'wrap' | 'nowrap' | 'wrap-reverse';
+  row?: boolean;
+  reverse?: boolean;
+  alignItems?:
+    | true
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'stretch'
+    | 'baseline';
+  alignSelf?:
+    | true
+    | 'auto'
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'stretch'
+    | 'baseline';
+  justifyContent?:
+    | true
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly';
+  center?: boolean;
+  direction?: 'row' | 'column';
+  position?: 'relative' | 'absolute' | 'fixed' | 'static' | 'sticky';
 }
