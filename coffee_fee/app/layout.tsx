@@ -12,10 +12,18 @@ import Theme from '@/provider/Theme';
 import { I18nProvider } from '@/provider/I18n';
 import KPortal from '@/containers/portal';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+import { Arimo } from 'next/font/google';
+
+const arimo = Arimo({
   subsets: ['latin'],
+  weight: ['400', '700'], // Chỉ tải các weight cần thiết
+  display: 'swap',
 });
+
+// const geistSans = Geist({
+//   variable: '--font-geist-sans',
+//   subsets: ['latin'],
+// });
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
@@ -34,9 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className="light" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${arimo.className} ${geistMono.variable} antialiased`}>
         <I18nProvider>
           <ReduxToolkitProvider>
             <Theme>

@@ -15,7 +15,7 @@ const WrapTab = ({ children, title, isSubTab }: IProps) => {
       <KContainer.View className="relative group">
         {/* Menu chính */}
         <Link
-          className="text-customGray-severe hover:text-primary-moderate"
+          className="text-sm uppercase text-customGray-severe hover:text-primary-moderate"
           href="/"
         >
           {title}
@@ -23,7 +23,7 @@ const WrapTab = ({ children, title, isSubTab }: IProps) => {
 
         {/* Menu con */}
         {isSubTab && (
-          <KContainer.View className="absolute left-0 mt-4 w-64 bg-white shadow-lg border border-customGray-light rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+          <KContainer.View className="absolute z-50 left-0 mt-4 w-64 bg-white shadow-lg border border-customGray-light rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
             {/* Tam giác nhọn */}
             <KContainer.View className="absolute top-[-8px] left-6 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-white"></KContainer.View>
 

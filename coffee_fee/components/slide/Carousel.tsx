@@ -20,7 +20,7 @@ function SimpleSlider() {
     arrows: false,
   };
   return (
-    <div className="container">
+    <div className="xl:container">
       <Slider {...settings}>
         <div style={{ width: '100%' }}>
           <Image

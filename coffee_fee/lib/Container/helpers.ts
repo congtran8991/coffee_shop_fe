@@ -4,6 +4,7 @@ import { SizeText, TypeLayout, TypeSpacing } from '@/constants/spacing';
 export interface KViewProps extends TypeSpacing, TypeLayout {
   width?: string | number;
   height?: string | number;
+  textAlign?: 'left' | 'right' | 'center';
   color?: string | TypeKColors;
   fontSize?: SizeText;
   className?: string;

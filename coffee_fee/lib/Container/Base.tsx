@@ -3,6 +3,7 @@
 import React, { memo } from 'react';
 import styleHelper from '../common';
 import { KViewProps } from './helpers';
+import { Box } from '@mui/material';
 
 const BaseContainer = React.forwardRef<HTMLInputElement, KViewProps>(
   (props, ref) => {
@@ -15,28 +16,30 @@ const BaseContainer = React.forwardRef<HTMLInputElement, KViewProps>(
       color,
       width,
       height,
+      textAlign,
       ...rest
     } = props;
     const { spacing, layout, remaining } = styleHelper.destructStyles(rest);
 
     return (
-      <div
+      <Box
         ref={ref}
         onClick={onPress}
         className={className}
+        {...spacing}
         style={{
           fontSize,
           ...style,
-          ...spacing,
           ...layout,
           ...remaining,
           color,
           width,
           height,
+          textAlign,
         }}
       >
         {children}
-      </div>
+      </Box>
     );
   },
 );
