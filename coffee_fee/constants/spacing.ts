@@ -23,7 +23,8 @@ export type SizeSpacing =
 export type SizeText =
   | '0.25rem'
   | '0.5rem'
-  | '0.75'
+  | '0.75rem'
+  | '0.875rem'
   | '1rem'
   | '1.25rem'
   | '1.5rem'
