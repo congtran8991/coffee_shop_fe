@@ -1,12 +1,8 @@
-import { TypeKColors } from '@/constants/colors';
-import { SizeText, TypeLayout, TypeSpacing } from '@/constants/spacing';
+import { TypeLayout, TypeSpacing, TypeStyleText } from '@/constants/spacing';
 
-export interface KViewProps extends TypeSpacing, TypeLayout {
+export interface KViewProps extends TypeSpacing, TypeLayout, TypeStyleText {
   width?: string | number;
   height?: string | number;
-  textAlign?: 'left' | 'right' | 'center';
-  color?: string | TypeKColors;
-  fontSize?: SizeText;
   className?: string;
   style?: React.CSSProperties;
   onPress?: (v?: any) => void;

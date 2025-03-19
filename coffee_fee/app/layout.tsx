@@ -25,10 +25,10 @@ const arimo = Arimo({
 //   subsets: ['latin'],
 // });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+// const geistMono = Geist_Mono({
+//   variable: '--font-geist-mono',
+//   subsets: ['latin'],
+// });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className="light" suppressHydrationWarning>
-      <body className={`${arimo.className} ${geistMono.variable} antialiased`}>
+      <body className={`${arimo.className} antialiased`}>
         <I18nProvider>
           <ReduxToolkitProvider>
             <Theme>

@@ -17,6 +17,7 @@ const BaseContainer = React.forwardRef<HTMLInputElement, KViewProps>(
       width,
       height,
       textAlign,
+      lineHeight,
       ...rest
     } = props;
     const { spacing, layout, remaining } = styleHelper.destructStyles(rest);
@@ -27,6 +28,7 @@ const BaseContainer = React.forwardRef<HTMLInputElement, KViewProps>(
         onClick={onPress}
         className={className}
         {...spacing}
+        lineHeight={lineHeight}
         style={{
           fontSize,
           ...style,

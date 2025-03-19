@@ -1,3 +1,5 @@
+import { TypeKColors } from './colors';
+
 export type SizeSpacing =
   | '0rem'
   | '0.25rem'
@@ -96,4 +98,12 @@ export interface TypeLayout {
   center?: boolean;
   direction?: 'row' | 'column';
   position?: 'relative' | 'absolute' | 'fixed' | 'static' | 'sticky';
+}
+
+export interface TypeStyleText {
+  lineHeight?: SizeSpacing;
+  color?: string | TypeKColors;
+  fontWeight?: TypeWeight;
+  fontSize?: SizeText;
+  textAlign?: 'left' | 'center' | 'right' | 'justify';
 }

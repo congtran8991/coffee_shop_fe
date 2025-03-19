@@ -1,12 +1,18 @@
 'use client';
-import { TypeKColors } from '@/constants/colors';
-import { SizeText, TypeSpacing, TypeWeight } from '@/constants/spacing';
+
+import { TypeSpacing, TypeStyleText } from '@/constants/spacing';
 import { Typography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/system';
 import { memo } from 'react';
 import styleHelper from '../common';
 
-interface CustomTextProps extends TypeSpacing, Omit<TypographyProps, 'mr'> {
+interface CustomTextProps
+  extends TypeSpacing,
+    TypeStyleText,
+    Omit<
+      TypographyProps,
+      'mr' | 'color' | 'fontWeight' | 'fontSize' | 'textAlign' | 'lineHeight'
+    > {
   variant?:
     | 'body1'
     | 'body2'
@@ -20,10 +26,6 @@ interface CustomTextProps extends TypeSpacing, Omit<TypographyProps, 'mr'> {
     | 'subtitle2'
     | 'caption'
     | 'overline';
-  color?: string | TypeKColors;
-  fontWeight?: TypeWeight;
-  fontSize?: SizeText;
-  textAlign?: 'left' | 'center' | 'right' | 'justify';
 }
 
 const StyledTypography = styled(Typography)<CustomTextProps>(

@@ -10,8 +10,11 @@ import KContainer from '@/lib/Container';
 import Image from 'next/image';
 import KButtons from '@/lib/Button';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useTranslation } from 'react-i18next';
 
 const ItemProduct = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <Card>
       <CardActionArea>
@@ -45,7 +48,7 @@ const ItemProduct = () => {
             overflow={'hidden'}
             style={{ WebkitLineClamp: 1 }}
           >
-            Hồng Trà Latte Nguyên Vị (Ldsdsdsdsds)
+            {t('Hồng Trà Latte Nguyên Vị (L)')}
           </KText.Base>
           <KText.Base
             fontWeight="bold"

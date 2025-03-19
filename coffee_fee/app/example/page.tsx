@@ -21,6 +21,7 @@ import KImage from '@/lib/Image';
 
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import KText from '@/lib/Text';
+import KContainer from '@/lib/Container';
 
 export default function Home() {
   const count = useAppSelector((state) => state.abc.count);
@@ -99,12 +100,12 @@ export default function Home() {
           </Grid>
         </Grid>
       </KForm>
-      <Stack direction="row">
+      <KContainer.Stack direction="row">
         <KText.Base mrR="0.25rem" fontWeight={'200'}>
           s vsvs
         </KText.Base>
         <KText.Base>svsvs</KText.Base>
-      </Stack>
+      </KContainer.Stack>
     </div>
   );
 }
