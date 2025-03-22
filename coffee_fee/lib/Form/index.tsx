@@ -1,3 +1,5 @@
+'use client';
+
 import React, { memo, useCallback, useRef } from 'react';
 import { KFormProps } from './helpers';
 

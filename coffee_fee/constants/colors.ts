@@ -1,5 +1,7 @@
 import { RootColors } from '@/types/common';
 
+// export type
+
 const brand: Record<
   | 'primary'
   | 'secondary'
@@ -55,8 +57,22 @@ const brand: Record<
   },
 };
 
+// type ExtractRootColors<T> = T extends `var(${infer U})` ? U : never;
+
+// export type typeKColors = `var(${ExtractRootColors<
+//   | (typeof brand)['defaultTextColor']
+//   | (typeof brand)[Exclude<
+//       keyof typeof brand,
+//       'defaultTextColor'
+//     >][keyof Record<'mild' | 'moderate' | 'severe', `var(${RootColors})`>]
+// >})`;
+
+export type TypeKColors = `var(${RootColors})`;
+
 const KColors = {
   ...brand,
+  white: 'var(--white-base)' as any,
+  black: 'var(--black-base)' as any,
 };
 
 export default KColors;

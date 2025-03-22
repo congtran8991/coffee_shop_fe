@@ -62,6 +62,8 @@ declare module '@mui/material/styles' {
     ['grey-mild']?: PaletteOptions['grey'];
     ['grey-moderate']?: PaletteOptions['grey'];
     ['grey-severe']?: PaletteOptions['grey'];
+
+    ['sd']?: PaletteOptions['grey-mild'];
   }
 }
 

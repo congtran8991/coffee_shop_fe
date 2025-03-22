@@ -3,9 +3,9 @@
 import { useAppDispatch, useAppSelector } from '@/hooks/redux-toolkit';
 import KInput from '@/lib/Input';
 import KForm from '@/lib/Form';
-import { increase } from '@/stores/redux-toolkit/counter/slice';
-import { showToast } from '@/utils/common';
-import PortalHandle from '@/utils/portal';
+// import { increase } from '@/stores/redux-toolkit/counter/slice';
+// import { showToast } from '@/utils/common';
+// import PortalHandle from '@/utils/portal';
 
 import * as yup from 'yup';
 import Image from 'next/image';
@@ -13,7 +13,15 @@ import { useTranslation } from 'react-i18next';
 import { useResolverForm } from '@/hooks/lib/useResolverForm';
 import { Controller } from 'react-hook-form';
 import Grid from '@mui/material/Grid2';
-import { Button } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
+import KButtons from '@/lib/Button';
+import { useRef } from 'react';
+import KColors from '@/constants/colors';
+import KImage from '@/lib/Image';
+
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import KText from '@/lib/Text';
+import KContainer from '@/lib/Container';
 
 export default function Home() {
   const count = useAppSelector((state) => state.abc.count);
@@ -57,12 +65,7 @@ export default function Home() {
 
       <div>{localStorage.getItem('i18nextLng')}</div>
 
-      <KForm
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log('submit');
-        }}
-      >
+      <KForm onSubmit={methods.handleSubmit(() => {})}>
         <Grid maxWidth={'400px'} container spacing={2}>
           <Grid size={{ xs: 12 }}>
             <Controller
@@ -85,12 +88,24 @@ export default function Home() {
           </Grid>
 
           <Grid size={{ xs: 12 }} textAlign={'center'}>
-            <Button variant="contained" type="submit">
-              Submit
-            </Button>
+            <KButtons.ICon
+              startIcon={<SendOutlinedIcon />}
+              variant="contained"
+              size="medium"
+              bgC={KColors.danger.mild}
+              color={KColors.white}
+              isLoading={false}
+              type="submit"
+            />
           </Grid>
         </Grid>
       </KForm>
+      <KContainer.Stack direction="row">
+        <KText.Base mrR="0.25rem" fontWeight={'200'}>
+          s vsvs
+        </KText.Base>
+        <KText.Base>svsvs</KText.Base>
+      </KContainer.Stack>
     </div>
   );
 }

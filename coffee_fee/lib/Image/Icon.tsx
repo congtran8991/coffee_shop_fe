@@ -1,19 +1,22 @@
 'use client';
 
-import { SvgIconTypeMap } from '@mui/material';
+import { SvgIconTypeMap, SxProps } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
-import { CSSProperties, memo, MouseEventHandler } from 'react';
+import { memo, MouseEventHandler } from 'react';
+import KContainer from '../Container';
+import { TypeLayout, TypeSpacing, TypeStyleText } from '@/constants/spacing';
+import styleHelper from '../common';
 
-interface IProps {
+interface IProps extends TypeStyleText, TypeLayout, TypeSpacing {
   icon: OverridableComponent<SvgIconTypeMap<object, 'svg'>>; // Không cần `muiName`
   className?: string;
-  style?: CSSProperties;
+  sx?: SxProps;
   onPress?: () => void;
 }
 
 const KICon: React.FC<IProps> = ({
   icon: IconComponent,
-  style,
+  sx,
   onPress,
   ...rest
 }) => {
@@ -22,13 +25,17 @@ const KICon: React.FC<IProps> = ({
     return null;
   }
 
+  const { textStyle, layout } = styleHelper.destructStyles(rest);
+
   return (
-    <div
+    <KContainer.View
       className="cursor-pointer"
-      onClick={onPress as unknown as MouseEventHandler<HTMLDivElement>}
+      onPress={onPress as unknown as MouseEventHandler<HTMLDivElement>}
+      {...layout}
+      {...rest}
     >
-      <IconComponent {...rest} style={style} />
-    </div>
+      <IconComponent sx={{ ...textStyle, ...sx }} />
+    </KContainer.View>
   );
 };
 

@@ -17,6 +17,8 @@ export type ValidPaletteKeys = Exclude<PaletteKeys, undefined>;
 // test
 
 export type RootColors =
+  | '--white-base'
+  | '--black-base'
   | '--default-text-color'
   | '--primary-1'
   | '--primary-2'

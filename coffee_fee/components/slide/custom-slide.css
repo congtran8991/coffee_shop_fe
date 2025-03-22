@@ -1,0 +1,31 @@
+.slider-container {
+  position: relative;
+  width: 600px; /* Điều chỉnh theo kích thước của bạn */
+  margin: auto;
+}
+
+/* Định dạng dots */
+.slick-dots.custom-dots {
+  position: absolute;
+  bottom: 20px; /* Điều chỉnh vị trí dots */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Tạo dots tròn */
+.custom-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+/* Màu khi active */
+.slick-dots.custom-dots li.slick-active .custom-dot {
+  background-color: var(--black-base);
+  transform: scale(1.2);
+}

@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   // reloadOnPrerender: true,
 
   reactStrictMode: true,
+  images: {
+    domains: ['hcm.fstorage.vn'], // ✅ Thêm domain vào đây
+  },
 };
 
 export default nextConfig;
