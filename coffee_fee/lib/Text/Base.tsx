@@ -13,6 +13,7 @@ interface CustomTextProps
       TypographyProps,
       'mr' | 'color' | 'fontWeight' | 'fontSize' | 'textAlign' | 'lineHeight'
     > {
+  type?: 'span';
   variant?:
     | 'body1'
     | 'body2'
@@ -33,16 +34,21 @@ const StyledTypography = styled(Typography)<CustomTextProps>(
     return {
       color: color || 'inherit',
       fontWeight: fontWeight || 400,
-      fontSize: fontSize || '1rem',
+      fontSize: fontSize || '0.875rem',
       textAlign: textAlign || 'left',
     };
   },
 );
 
-const TextBase: React.FC<CustomTextProps> = ({ children, ...props }) => {
-  const { spacing, remaining } = styleHelper.destructSpacing(props);
-  const _props = { ...remaining, ...spacing };
-  return <StyledTypography {..._props}>{children}</StyledTypography>;
+const TextBase: React.FC<CustomTextProps> = (props) => {
+  const { children, type, ...rest } = props;
+  const { spacing, layout, textStyle } = styleHelper.destructStyles(rest);
+  const _props = { ...spacing, ...layout, ...textStyle };
+  return (
+    <StyledTypography {..._props} component={type}>
+      {children}
+    </StyledTypography>
+  );
 };
 
 export default memo(TextBase);

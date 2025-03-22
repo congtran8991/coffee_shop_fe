@@ -22,7 +22,7 @@ const BasicButtons = React.forwardRef<HTMLButtonElement, KButtonProps>(
       ...rest
     } = props;
 
-    const { spacing } = styleHelper.destructSpacing(rest);
+    const spacing = styleHelper.destructSpacing(rest);
 
     return (
       <Button

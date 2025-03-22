@@ -1,4 +1,4 @@
-import { TypeLayout, TypeSpacing } from '@/constants/spacing';
+import { TypeLayout, TypeSpacing, TypeStyleText } from '@/constants/spacing';
 
 class styleHelper {
   static destructSpacing = (props: TypeSpacing = {}) => {
@@ -17,7 +17,6 @@ class styleHelper {
       pdR,
       pdT,
       pdB,
-      ...remaining
     } = props;
     const spacing = {
       margin: mr,
@@ -36,10 +35,7 @@ class styleHelper {
       paddingY: pdY,
     };
 
-    return {
-      spacing,
-      remaining,
-    };
+    return spacing;
   };
 
   static destructLayout = (props: TypeLayout = {}) => {
@@ -116,11 +112,24 @@ class styleHelper {
     return style;
   };
 
+  static destructStylesText = (props: TypeStyleText) => {
+    const { fontSize, fontWeight, color, lineHeight, textAlign } = props;
+
+    return {
+      fontSize,
+      fontWeight,
+      color,
+      lineHeight,
+      textAlign,
+    };
+  };
+
   static destructStyles = <T extends object>(props: T) => {
     const layout = this.destructLayout(props);
-    const { spacing, remaining } = this.destructSpacing(props);
+    const textStyle = this.destructStylesText(props);
+    const spacing = this.destructSpacing(props);
 
-    return { layout, spacing, remaining };
+    return { layout, spacing, textStyle };
   };
 }
 

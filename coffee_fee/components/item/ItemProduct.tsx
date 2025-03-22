@@ -55,7 +55,7 @@ const ItemProduct = () => {
             color={KColors.primary.severe}
             fontSize={'0.875rem'}
           >
-            65000
+            650000
           </KText.Base>
         </CardContent>
       </CardActionArea>

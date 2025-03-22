@@ -12,15 +12,12 @@ const BaseContainer = React.forwardRef<HTMLInputElement, KViewProps>(
       className,
       onPress,
       children,
-      fontSize = '1rem',
-      color,
       width,
       height,
-      textAlign,
       lineHeight,
       ...rest
     } = props;
-    const { spacing, layout, remaining } = styleHelper.destructStyles(rest);
+    const { spacing, layout, textStyle } = styleHelper.destructStyles(rest);
 
     return (
       <Box
@@ -30,14 +27,12 @@ const BaseContainer = React.forwardRef<HTMLInputElement, KViewProps>(
         {...spacing}
         lineHeight={lineHeight}
         style={{
-          fontSize,
           ...style,
           ...layout,
-          ...remaining,
-          color,
+          ...textStyle,
+
           width,
           height,
-          textAlign,
         }}
       >
         {children}

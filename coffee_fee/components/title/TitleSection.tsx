@@ -22,7 +22,7 @@ const TitleSection = ({ color, title, description }: IProps) => {
         color={color}
         fontSize="1.5rem"
         textAlign="center"
-        lineHeight="3.5rem"
+        lineHeight="4rem"
       >
         {t(title)}
       </KText.Base>

@@ -14,6 +14,8 @@ import KContainer from '@/lib/Container';
 // import { Grid2 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import KText from '@/lib/Text';
+import ItemPromotionNews from '@/components/item/ItemPromotionNews';
+import KInput from '@/lib/Input';
 
 // import Image from 'next/image';
 // import { useTranslation } from 'react-i18next';
@@ -114,6 +116,50 @@ export default function Home() {
         color={KColors.primary.severe}
         description="Tin tức & Khuyến mãi của Phúc Long"
       />
+
+      <KContainer.View className="xl:container">
+        <Grid container spacing={3}>
+          <Grid size={{ xs: 3 }}>
+            <ItemPromotionNews />
+          </Grid>
+          <Grid size={{ xs: 3 }}>
+            <ItemPromotionNews />
+          </Grid>
+          <Grid size={{ xs: 3 }}>
+            <ItemPromotionNews />
+          </Grid>
+          <Grid size={{ xs: 3 }}>
+            <ItemPromotionNews />
+          </Grid>
+        </Grid>
+      </KContainer.View>
+
+      <TitleSection
+        title={'Danh sách cửa hàng'}
+        color={KColors.primary.severe}
+        description="Danh sách cửa hàng của phúc long"
+      />
+
+      <KContainer.View className="xl:container">
+        <Grid container spacing={6}>
+          <Grid size={{ xs: 6 }}></Grid>
+          <Grid size={{ xs: 6 }}>
+            <KContainer.View>
+              <KInput.Base
+                fullWidth
+                label="Tìm kiếm cửa hàng"
+                sx={{ borderRadius: '50px' }}
+              />
+            </KContainer.View>
+
+            <KContainer.View>
+              <KText.Base color={KColors.primary.severe}>
+                Tìm kiếm theo khu vực
+              </KText.Base>
+            </KContainer.View>
+          </Grid>
+        </Grid>
+      </KContainer.View>
     </>
   );
 }

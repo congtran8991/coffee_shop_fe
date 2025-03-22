@@ -5,7 +5,7 @@ import './globals.css';
 import '../components/slide/custom-slide.css';
 // import { Inter } from 'next/font/google';
 import Header from '@/components/header';
-// import Footer from '@/components/Footer';
+import Footer from '@/components/footer';
 import ToastProvider from '@/components/ToastProvider';
 import ReduxToolkitProvider from '@/provider/ReduxToolkit';
 import Theme from '@/provider/Theme';
@@ -50,7 +50,7 @@ export default function RootLayout({
                 <KPortal />
                 <Header />
                 {children}
-                {/* <Footer /> */}
+                <Footer />
               </ToastProvider>
             </Theme>
           </ReduxToolkitProvider>
