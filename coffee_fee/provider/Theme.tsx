@@ -119,7 +119,7 @@ export default function Theme({ children }: { children: React.ReactNode }) {
     palette: {
       // mode: 'light',
       primary: {
-        main: getColorRoot('--primary-2'),
+        main: getColorRoot('--primary-3'),
       },
       'primary-mild': {
         main: getColorRoot('--primary-1'),

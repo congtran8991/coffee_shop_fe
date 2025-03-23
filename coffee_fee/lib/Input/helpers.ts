@@ -1,5 +1,5 @@
 import useCombineRefs from '@/hooks/lib/useCombineRef';
-import { SxProps } from '@mui/material';
+import { SlotProps, SxProps } from '@mui/material';
 import { useRef } from 'react';
 
 export interface KInputProps {
@@ -14,6 +14,9 @@ export interface KInputProps {
   error?: boolean;
   sx?: SxProps;
   fullWidth?: boolean;
+  inputLabel?: {
+    shrink: boolean;
+  };
 }
 
 export const useInputProps = (

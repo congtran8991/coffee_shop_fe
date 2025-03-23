@@ -3,8 +3,9 @@
 import { TypeSpacing, TypeStyleText } from '@/constants/spacing';
 import { Typography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/system';
-import { memo } from 'react';
+import { CSSProperties, memo } from 'react';
 import styleHelper from '../common';
+import KColors from '@/constants/colors';
 
 interface CustomTextProps
   extends TypeSpacing,
@@ -27,12 +28,13 @@ interface CustomTextProps
     | 'subtitle2'
     | 'caption'
     | 'overline';
+  style?: CSSProperties;
 }
 
 const StyledTypography = styled(Typography)<CustomTextProps>(
   ({ color, fontWeight, fontSize, textAlign }) => {
     return {
-      color: color || 'inherit',
+      color: color,
       fontWeight: fontWeight || 400,
       fontSize: fontSize || '0.875rem',
       textAlign: textAlign || 'left',
@@ -41,11 +43,11 @@ const StyledTypography = styled(Typography)<CustomTextProps>(
 );
 
 const TextBase: React.FC<CustomTextProps> = (props) => {
-  const { children, type, ...rest } = props;
+  const { children, type, style, ...rest } = props;
   const { spacing, layout, textStyle } = styleHelper.destructStyles(rest);
   const _props = { ...spacing, ...layout, ...textStyle };
   return (
-    <StyledTypography {..._props} component={type}>
+    <StyledTypography {..._props} style={style} component={type}>
       {children}
     </StyledTypography>
   );

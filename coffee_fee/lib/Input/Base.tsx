@@ -6,13 +6,16 @@ import { KInputProps, useInputProps } from './helpers';
 
 const BaseInput = React.forwardRef<HTMLInputElement, KInputProps>(
   (props, ref) => {
-    const { name, combineRefs, sx, ...rest } = useInputProps(props, ref);
+    const { name, combineRefs, sx, inputLabel, ...rest } = useInputProps(
+      props,
+      ref,
+    );
     return (
       <TextField
         id={name}
         color="info"
         inputRef={combineRefs}
-        slotProps={{ input: { sx } }}
+        slotProps={{ input: { sx }, inputLabel }}
         {...rest}
       />
     );
