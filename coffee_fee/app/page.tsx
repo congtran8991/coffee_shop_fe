@@ -197,7 +197,9 @@ export default function Home() {
               <KText.Base color={KColors.primary.severe}>
                 Danh sách cửa hàng
               </KText.Base>
-              <KContainer.View>
+              <KContainer.View mrT="0.75rem">
+                <ItemShop />
+                <ItemShop />
                 <ItemShop />
               </KContainer.View>
             </KContainer.View>

@@ -11,8 +11,6 @@ const BasicButtons = React.forwardRef<HTMLButtonElement, KButtonProps>(
       title = 'button',
       size = 'small',
       variant = 'contained',
-      color,
-      fontWeight = '400',
       bgC,
       border,
       borderColor,
@@ -22,22 +20,22 @@ const BasicButtons = React.forwardRef<HTMLButtonElement, KButtonProps>(
       ...rest
     } = props;
 
-    const { spacing } = styleHelper.destructStyles(rest);
+    const { spacing, textStyle, remaining } = styleHelper.destructStyles(rest);
 
     return (
       <Button
         ref={ref}
-        {...rest}
+        {...remaining}
         variant={variant}
         size={size}
         loading={isLoading}
         sx={{
-          color,
           backgroundColor: bgC,
-          fontWeight,
+
           border,
           borderColor,
           ...spacing,
+          ...textStyle,
           ...sx,
         }}
         onClick={onPress}

@@ -124,12 +124,33 @@ class styleHelper {
     };
   };
 
+  static removeUnusedVariable = (props: TypeSpacing = {}) => {
+    delete props.mr;
+    delete props.mrX;
+    delete props.mrY;
+    delete props.mrL;
+    delete props.mrR;
+    delete props.mrT;
+    delete props.mrB;
+    delete props.pd;
+    delete props.pdX;
+    delete props.pdY;
+    delete props.pdL;
+    delete props.pdR;
+    delete props.pdT;
+    delete props.pdB;
+
+    return props;
+  };
+
   static destructStyles = <T extends object>(props: T) => {
     const layout = this.destructLayout(props);
     const textStyle = this.destructStylesText(props);
     const spacing = this.destructSpacing(props);
 
-    return { layout, spacing, textStyle };
+    const remaining = this.removeUnusedVariable(props);
+
+    return { layout, spacing, textStyle, remaining };
   };
 }
 
