@@ -68,10 +68,10 @@ declare module '@mui/material/styles' {
 }
 
 export default function Theme({ children }: { children: React.ReactNode }) {
-  // const isClient = useIsClientRender();
-  // if (!isClient) {
-  //   return null;
-  // }
+  const isClient = useIsClientRender();
+  if (!isClient) {
+    return null;
+  }
   const theme = createTheme({
     components: {
       MuiTextField: {

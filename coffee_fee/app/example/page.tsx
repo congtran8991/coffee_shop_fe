@@ -63,7 +63,7 @@ export default function Home() {
         Call Popup
       </button> */}
 
-      <div>{localStorage.getItem('i18nextLng')}</div>
+      {/* <div>{localStorage.getItem('i18nextLng')}</div> */}
 
       <KForm onSubmit={methods.handleSubmit(() => {})}>
         <Grid maxWidth={'400px'} container spacing={2}>

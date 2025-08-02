@@ -20,15 +20,19 @@ import KInput from '@/lib/Input';
 import KImage from '@/lib/Image';
 import ItemShop from '@/components/item/ItemShop';
 
+import { useTranslationServer } from '@/hooks/lib-next/useTranslationServer';
+
 // import Image from 'next/image';
 // import { useTranslation } from 'react-i18next';
-export default function Home() {
-  // const count = useAppSelector((state) => state.abc.count);
-  // const { t, i18n } = useTranslation();
-  // const dispatch = useAppDispatch();
+export const dynamic = 'force-static'; // như getStaticProps
+
+export default async function Home() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const trans = await useTranslationServer();
 
   return (
     <>
+      {trans('greeting')}
       <Carousel />
       <TitleSection
         title={'BST Tea Latte - Bánh Banaberry mới!'}
@@ -58,6 +62,7 @@ export default function Home() {
           <KButtons.ICon
             variant="outlined"
             endIcon={<KeyboardArrowDownOutlinedIcon />}
+            color={KColors.primary.severe}
             title={
               <KContainer.Stack direction={'row'}>
                 <KText.Base textTransform={'initial'} mrR="0.25rem">

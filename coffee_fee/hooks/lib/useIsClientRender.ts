@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useIsClientRender = () => {
-  const [isClient, setIsClient] = useState(false);
+  const [isClient, setIsClient] = useState<boolean>(false);
   useEffect(() => {
     setIsClient(true);
   }, []);

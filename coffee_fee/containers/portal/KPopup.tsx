@@ -49,11 +49,7 @@ const KPopup = React.forwardRef<IPopupDialogProps>((_, ref) => {
             >
               <div className="flex-between">
                 <div> {item?.title}</div>
-                <KImage.ICon
-                  icon={CloseOutlinedIcon}
-                  style={{ color: KColors.customGray.moderate }}
-                  onPress={dismiss}
-                />
+                <KImage.ICon icon={CloseOutlinedIcon} onPress={dismiss} />
               </div>
             </DialogTitle>
           )}

@@ -1,3 +1,4 @@
+'use client';
 import React, { memo } from 'react';
 import Base from '../Button/Base';
 import { KButtonProps } from './helpers';

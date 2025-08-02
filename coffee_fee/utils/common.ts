@@ -23,6 +23,7 @@ export const defaultToastOptions: ToastOptions = {
  * @param {ToastOptions} [options=defaultToastOption]
  * @return {Id}
  */
+
 export const showToast = (
   type: ToastType,
   content: ToastContent,
@@ -46,12 +47,17 @@ export const showToast = (
   }
 };
 
-export const getColorRoot = (rootColor: RootColors) => {
+export const getColorRoot = (
+  rootColor: RootColors,
+  fallback: string = '#000',
+) => {
   if (typeof window === 'undefined' || typeof document === 'undefined') {
     // Không phải môi trường trình duyệt
-    return '';
+    return fallback;
   }
-  return getComputedStyle(document.documentElement)
-    .getPropertyValue(rootColor)
-    .trim();
+  return (
+    getComputedStyle(document.documentElement)
+      .getPropertyValue(rootColor)
+      .trim() || fallback
+  );
 };

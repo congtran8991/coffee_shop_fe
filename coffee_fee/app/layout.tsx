@@ -9,10 +9,11 @@ import Footer from '@/components/footer';
 import ToastProvider from '@/components/ToastProvider';
 import ReduxToolkitProvider from '@/provider/ReduxToolkit';
 import Theme from '@/provider/Theme';
-import { I18nProvider } from '@/provider/I18n';
+// import { I18nProvider } from '@/provider/I18n';
 import KPortal from '@/containers/portal';
 
 import { Arimo } from 'next/font/google';
+import { I18nProvider } from '@/provider/I18n';
 
 const arimo = Arimo({
   subsets: ['latin'],
