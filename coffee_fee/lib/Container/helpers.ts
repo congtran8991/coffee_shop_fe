@@ -5,6 +5,6 @@ export interface KViewProps extends TypeSpacing, TypeLayout, TypeStyleText {
   height?: string | number;
   className?: string;
   style?: React.CSSProperties;
-  onPress?: (v?: any) => void;
+  onPress?: (_v?: any) => void;
   children?: any;
 }

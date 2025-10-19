@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import { headers } from 'next/headers';
 
-export const useTranslationServer = async () => {
+export default async function useTranslationServer() {
   const headerObj = await headers();
   const locale = (headerObj.get('NEXT_LOCALE') || 'en') as 'vi' | 'en';
 
@@ -19,5 +19,5 @@ export const useTranslationServer = async () => {
     return translations[key] ?? key;
   };
 
-  return await trans;
-};
+  return trans;
+}

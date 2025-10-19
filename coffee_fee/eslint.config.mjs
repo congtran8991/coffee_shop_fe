@@ -16,10 +16,14 @@ const eslintConfig = [
     rules: {
       'react-hooks/rules-of-hooks': 'error', // Báo lỗi khi vi phạm quy tắc hooks
       'react-hooks/exhaustive-deps': 'warn', // Cảnh báo nếu thiếu dependencies
-      'no-console': 'warn', // Ví dụ: Báo cảnh báo khi sử dụng console.log
-      'no-unused-vars': 'warn',
-      '@typescript-eslint/no-unused-vars': 'warn',
+      'no-console': 'off', // Ví dụ: Báo cảnh báo khi sử dụng console.log
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }], // Cảnh báo nếu có biến không sử dụng, ngoại trừ biến bắt đầu bằng dấu gạch dưới
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_' },
+      ],
       'prefer-const': 'warn',
+      'no-explicit-any': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
     },
   }),

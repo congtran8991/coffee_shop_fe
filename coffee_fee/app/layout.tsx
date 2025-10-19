@@ -49,9 +49,9 @@ export default function RootLayout({
             <Theme>
               <ToastProvider>
                 <KPortal />
-                <Header />
+                {/* <Header /> */}
                 {children}
-                <Footer />
+                {/* <Footer /> */}
               </ToastProvider>
             </Theme>
           </ReduxToolkitProvider>

@@ -8,13 +8,13 @@ import CardActionArea from '@mui/material/CardActionArea';
 
 import KColors from '@/constants/colors';
 import KContainer from '@/lib/Container';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 import KImage from '@/lib/Image';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
 const ItemPromotionNews = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <Card sx={{ border: '1px solid', borderColor: KColors.border.moderate }}>

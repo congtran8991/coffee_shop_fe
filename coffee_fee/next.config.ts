@@ -14,7 +14,15 @@ const nextConfig: NextConfig = {
 
   reactStrictMode: true,
   images: {
-    domains: ['hcm.fstorage.vn'], // ✅ Thêm domain vào đây
+    // domains: ['hcm.fstorage.vn'], // ✅ Thêm domain vào đây
+    remotePatterns: [
+      // ✅ Thêm domain vào đây
+      {
+        protocol: 'https',
+        hostname: 'hcm.fstorage.vn',
+        pathname: '**',
+      },
+    ],
   },
 };
 

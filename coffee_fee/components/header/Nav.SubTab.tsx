@@ -4,7 +4,7 @@ import KColors from '@/constants/colors';
 import KContainer from '@/lib/Container';
 import KText from '@/lib/Text';
 import { ISubMenu } from '@/types/common';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { memo } from 'react';
 
 interface IProps {

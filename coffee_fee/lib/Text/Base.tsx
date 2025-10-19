@@ -5,7 +5,6 @@ import { Typography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/system';
 import { CSSProperties, memo } from 'react';
 import styleHelper from '../common';
-import KColors from '@/constants/colors';
 
 interface CustomTextProps
   extends TypeSpacing,

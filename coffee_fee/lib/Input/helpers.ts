@@ -1,12 +1,12 @@
 import useCombineRefs from '@/hooks/lib/useCombineRef';
-import { SlotProps, SxProps } from '@mui/material';
+import { SxProps } from '@mui/material';
 import { useRef } from 'react';
 
 export interface KInputProps {
   className?: string;
   label?: string;
-  onChange?: (v?: any) => void;
-  onFocus?: (v?: any) => void;
+  onChange?: (_v?: any) => void;
+  onFocus?: (_v?: any) => void;
   value?: string;
   message?: string;
   size?: 'small' | 'medium';

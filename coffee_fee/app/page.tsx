@@ -19,8 +19,7 @@ import ItemPromotionNews from '@/components/item/ItemPromotionNews';
 import KInput from '@/lib/Input';
 import KImage from '@/lib/Image';
 import ItemShop from '@/components/item/ItemShop';
-
-import { useTranslationServer } from '@/hooks/lib-next/useTranslationServer';
+import useTranslationServer from '@/hooks/lib-next/useTranslationServer';
 
 // import Image from 'next/image';
 // import { useTranslation } from 'react-i18next';

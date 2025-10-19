@@ -9,7 +9,7 @@ import Image from 'next/image';
 function SimpleSlider() {
   const settings: Settings = {
     dots: true,
-    customPaging: (i) => (
+    customPaging: (_i) => (
       <div className="custom-dot"></div> // Custom dots
     ),
     dotsClass: 'slick-dots custom-dots',

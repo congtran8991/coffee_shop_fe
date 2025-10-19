@@ -4,7 +4,7 @@ import KContainer from '@/lib/Container';
 // import useHydratedData from '@/hooks/lib/useHydratedData';
 // import useIsClientRender from '@/hooks/lib/useIsClientRender';
 import { useTheme } from 'next-themes';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { setCookie } from 'cookies-next';
 // import { cookies } from 'next/headers';
@@ -12,6 +12,8 @@ const TopHeader = () => {
   // const cookieStore = cookies();
   const { i18n } = useTranslation();
   const { theme, setTheme } = useTheme();
+
+  console.log('theme', theme);
 
   // const themeClient = useHydratedData(theme);
 
