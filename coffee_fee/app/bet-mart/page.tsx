@@ -285,7 +285,7 @@ const Main = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="relative rounded-xl border border-gray-700 bg-gray-800 text-white shadow overflow-hidden h-[270px] w-full">
-                <img
+                <img  
                   src="image/background-18.png"
                   alt="Background"
                   className="absolute inset-0 w-full h-full object-cover z-0"
