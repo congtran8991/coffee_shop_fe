@@ -1,5 +1,7 @@
-import type { NextConfig } from 'next';
 
+
+import type { NextConfig } from 'next';
+// import path from 'path'
 // import { i18n } from './next-i18n.config.js'; // Uncomment if you have a separate i18n config file
 // import { i18n } from './next-i18n.config'; // Uncomment if you have a separate i18n config file
 
@@ -23,6 +25,14 @@ const nextConfig: NextConfig = {
         pathname: '**',
       },
     ],
+  },
+  // webpack: (config) => {
+  //   config.resolve.alias['@uikit'] = path.resolve(__dirname, '../UICommon')
+  //   return config
+  // },
+  transpilePackages: ['uikit'],
+  experimental: {
+    externalDir: true,
   },
 };
 

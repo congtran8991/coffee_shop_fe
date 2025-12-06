@@ -11,12 +11,18 @@ import Image from 'next/image';
 import KButtons from '@/lib/Button';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useTranslation } from 'react-i18next';
+import dynamic from 'next/dynamic';
 
+
+
+
+import { TestA } from 'uikit'
 const ItemProduct = () => {
   const { t } = useTranslation();
 
   return (
     <Card>
+      <TestA/>
       <CardActionArea>
         <KContainer.View
           height={'11rem'}

@@ -1,3 +1,5 @@
+
+
 import ItemProduct from '@/components/item/ItemProduct';
 import Carousel from '@/components/slide/Carousel';
 import TitleSection from '@/components/title/TitleSection';
@@ -21,9 +23,11 @@ import KImage from '@/lib/Image';
 import ItemShop from '@/components/item/ItemShop';
 import useTranslationServer from '@/hooks/lib-next/useTranslationServer';
 
+ 
+
 // import Image from 'next/image';
 // import { useTranslation } from 'react-i18next';
-export const dynamic = 'force-static'; // như getStaticProps
+// export const dynamic = 'force-static'; // như getStaticProps
 
 export default async function Home() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
