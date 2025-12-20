@@ -49,7 +49,7 @@ export default function RootLayout({
             <Theme>
               <ToastProvider>
                 <KPortal />
-                {/* <Header /> */}
+                <Header />
                 {children}
                 {/* <Footer /> */}
               </ToastProvider>
