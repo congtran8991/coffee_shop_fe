@@ -1,4 +1,4 @@
-
+'use client';
 
 import ItemProduct from '@/components/item/ItemProduct';
 import Carousel from '@/components/slide/Carousel';
@@ -21,199 +21,118 @@ import ItemPromotionNews from '@/components/item/ItemPromotionNews';
 import KInput from '@/lib/Input';
 import KImage from '@/lib/Image';
 import ItemShop from '@/components/item/ItemShop';
-import useTranslationServer from '@/hooks/lib-next/useTranslationServer';
-
- 
+// import useTranslationServer from '@/hooks/lib-next/useTranslationServer';
 
 // import Image from 'next/image';
 // import { useTranslation } from 'react-i18next';
 // export const dynamic = 'force-static'; // như getStaticProps
 
-export default async function Home() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const trans = await useTranslationServer();
+export default function Home() {
+  // const trans = await useTranslationServer();
 
   return (
-    <>
-      {trans('greeting')}
-      <Carousel />
-      <TitleSection
-        title={'BST Tea Latte - Bánh Banaberry mới!'}
-        color={KColors.primary.severe}
-      />
+    <div className="font-sans text-black">
+      {/* Hero Grid */}
+      <section
+        className="mx-auto
+  grid grid-cols-2 pb-12"
+      >
+        {[
+          {
+            label: 'Gifts for her',
+            img: 'https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dwb9910594/home/2025/w51/ss26-woman-d.jpg',
+          },
+          {
+            label: 'Shop Woman',
+            img: 'https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dw2875e774/home/2025/w51/ss26-man-d.jpg',
+          },
+          {
+            label: 'Shop Man',
+            img: 'https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dwfd0aacf5/home/2025/w51/gift-w-d.jpg',
+          },
+          {
+            label: 'FW25 Sale',
+            img: 'https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dwb974d745/home/2025/w51/gift-m-d.jpg',
+          },
+          {
+            label: 'Women’s jeans',
+            img: 'https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dw2454f2a5/home/2025/w51/shop-woman-d.jpg',
+          },
+          {
+            label: 'Men’s jeans',
+            img: 'https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dw03c0f216/home/2025/w51/shop-man-d.jpg',
+          },
+          {
+            label: 'Men’s jeans',
+            img: 'https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dw4025efdb/home/2025/w51/shirt-w-d.jpg',
+          },
+          {
+            label: 'Men’s jeans',
+            img: 'https://www.acnestudios.com/on/demandware.static/-/Library-Sites-acne/default/dwd6871b85/home/2025/w51/shirt-m-d.jpg',
+          },
+        ].map((block, idx) => (
+          <div
+            key={idx}
+            className="relative aspect-[2.5/4] overflow-hidden group"
+          >
+            <img
+              src={block.img}
+              alt={block.label}
+              className="
+         w-full h-full object-cover transition-transform duration-700 group-hover:scale-105
+        "
+            />
 
-      <KContainer.View className="container">
-        <Grid container spacing={3}>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-        </Grid>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-        <KContainer.View textAlign="center" mrT="1rem">
-          <KButtons.ICon
-            variant="outlined"
-            endIcon={<KeyboardArrowDownOutlinedIcon />}
-            color={KColors.primary.severe}
-            title={
-              <KContainer.Stack direction={'row'}>
-                <KText.Base textTransform={'initial'} mrR="0.25rem">
-                  Xem thêm 5 sản phẩm
-                </KText.Base>
-                <KText.Base fontWeight="bold">
-                  BEST SELLERS - TRÀ THƠM CHẤT LƯỢNG
-                </KText.Base>
-              </KContainer.Stack>
-            }
+            {/* Text */}
+            <div className="absolute bottom-6 left-6 text-white">
+              <p className="text-xl font-medium">{block.label}</p>
+              <span className="text-sm underline underline-offset-4">
+                Shop now
+              </span>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Services & Highlight */}
+      <section className="px-8 space-y-8">
+        <div className="grid grid-cols-3 gap-4">
+          {[
+            {
+              title: 'Shipping & Returns',
+              desc: 'Fast delivery and easy returns',
+            },
+            { title: 'Gift Card', desc: 'Instant digital delivery' },
+            { title: 'SS26 Runway', desc: "Women's Spring/Summer 2026" },
+          ].map((item, idx) => (
+            <div key={idx} className="border p-6 text-center">
+              <h3 className="text-lg font-bold">{item.title}</h3>
+              <p className="text-sm mt-2">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-100 px-8 py-10 mt-12">
+        <div className="text-center mb-6">Sign up for updates</div>
+        <div className="flex justify-center">
+          <input
+            className="border p-2"
+            type="email"
+            placeholder="Email address"
           />
-        </KContainer.View>
-      </KContainer.View>
-
-      <TitleSection
-        title={'BEST SELLERS - TRÀ THƠM CHẤT LƯỢNG'}
-        color={KColors.primary.severe}
-      />
-
-      <KContainer.View className="container">
-        <Grid container spacing={3}>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-          <Grid size={{ xs: 2.4 }}>
-            <ItemProduct />
-          </Grid>
-        </Grid>
-
-        <KContainer.View textAlign="center" mrT="1rem">
-          <KButtons.ICon
-            variant="outlined"
-            endIcon={<KeyboardArrowDownOutlinedIcon />}
-            color={KColors.primary.severe}
-            title={
-              <KContainer.Stack direction={'row'}>
-                <KText.Base mrR="0.25rem">Xem thêm 5 sản phẩm</KText.Base>
-                <KText.Base fontWeight="bold">
-                  BEST SELLERS - TRÀ THƠM CHẤT LƯỢNG
-                </KText.Base>
-              </KContainer.Stack>
-            }
-          />
-        </KContainer.View>
-      </KContainer.View>
-
-      <TitleSection
-        title={'Tin tức & Khuyến mãi'}
-        color={KColors.primary.severe}
-        description="Tin tức & Khuyến mãi của Phúc Long"
-      />
-
-      <KContainer.View className="xl:container">
-        <Grid container spacing={3}>
-          <Grid size={{ xs: 3 }}>
-            <ItemPromotionNews />
-          </Grid>
-          <Grid size={{ xs: 3 }}>
-            <ItemPromotionNews />
-          </Grid>
-          <Grid size={{ xs: 3 }}>
-            <ItemPromotionNews />
-          </Grid>
-          <Grid size={{ xs: 3 }}>
-            <ItemPromotionNews />
-          </Grid>
-        </Grid>
-      </KContainer.View>
-
-      <TitleSection
-        title={'Danh sách cửa hàng'}
-        color={KColors.primary.severe}
-        description="Danh sách cửa hàng của phúc long"
-      />
-
-      <KContainer.View className="xl:container">
-        <Grid container spacing={6}>
-          <Grid size={{ xs: 6 }}></Grid>
-          <Grid size={{ xs: 6 }}>
-            <KContainer.View>
-              <KInput.Base
-                fullWidth
-                label="Tìm kiếm cửa hàng"
-                sx={{ borderRadius: '50px' }}
-              />
-            </KContainer.View>
-
-            <KContainer.View>
-              <KText.Base color={KColors.primary.severe} mrY="1rem">
-                Tìm kiếm theo khu vực
-              </KText.Base>
-
-              <Grid container spacing={2}>
-                <Grid size={{ xs: 4 }}>
-                  <KInput.Base
-                    label="Tỉnh thành"
-                    inputLabel={{ shrink: true }}
-                  />
-                </Grid>
-
-                <Grid size={{ xs: 4 }}>
-                  <KInput.Base
-                    label="Quận huyện"
-                    inputLabel={{ shrink: true }}
-                  />
-                </Grid>
-
-                <Grid size={{ xs: 4 }}>
-                  <KInput.Base
-                    label="Phường xã"
-                    inputLabel={{ shrink: true }}
-                  />
-                </Grid>
-              </Grid>
-
-              <KContainer.View
-                dp="flex"
-                row
-                color={KColors.primary.severe}
-                mrY="1rem"
-              >
-                <KImage.ICon icon={ModeStandbyOutlinedIcon} mrR="0.5rem" />
-                <KText.Base>Vị trí hiện tại của quý khách</KText.Base>
-              </KContainer.View>
-            </KContainer.View>
-
-            <KContainer.View>
-              <KText.Base color={KColors.primary.severe}>
-                Danh sách cửa hàng
-              </KText.Base>
-              <KContainer.View mrT="0.75rem">
-                <ItemShop />
-                <ItemShop />
-                <ItemShop />
-              </KContainer.View>
-            </KContainer.View>
-          </Grid>
-        </Grid>
-      </KContainer.View>
-    </>
+          <button className="bg-black text-white px-4">Subscribe</button>
+        </div>
+        <div className="mt-8 text-sm text-gray-700 flex justify-center space-x-4">
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Contact</a>
+        </div>
+      </footer>
+    </div>
   );
 }

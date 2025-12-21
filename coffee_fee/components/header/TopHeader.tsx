@@ -6,7 +6,7 @@ import KContainer from '@/lib/Container';
 import { useTheme } from 'next-themes';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { setCookie } from 'cookies-next';
+// import { setCookie } from 'cookies-next';
 // import { cookies } from 'next/headers';
 const TopHeader = () => {
   // const cookieStore = cookies();
@@ -23,14 +23,14 @@ const TopHeader = () => {
   //   return null;
   // }
 
-  const changeLanguage = useCallback(
-    (lng: string) => {
-      i18n.changeLanguage(lng);
-      setCookie('NEXT_LOCALE', lng, { path: '/' });
-      window.location.reload();
-    },
-    [i18n],
-  );
+  // const changeLanguage = useCallback(
+  //   (lng: string) => {
+  //     i18n.changeLanguage(lng);
+  //     setCookie('NEXT_LOCALE', lng, { path: '/' });
+  //     window.location.reload();
+  //   },
+  //   [i18n],
+  // );
 
   return (
     <KContainer.View className="border-b-2 text-customGray-moderate border-bord">
@@ -58,20 +58,20 @@ const TopHeader = () => {
           <KContainer.View>chọn phương thức nhận hàng</KContainer.View>
           <KContainer.View>hộp thư 1234</KContainer.View>
           <KContainer.View>account</KContainer.View>
-          <KContainer.View
+          {/* <KContainer.View
             onPress={() => {
               changeLanguage('vi');
             }}
           >
             Vietnamese
-          </KContainer.View>
-          <KContainer.View
+          </KContainer.View> */}
+          {/* <KContainer.View
             onPress={() => {
               changeLanguage('en');
             }}
           >
             English
-          </KContainer.View>
+          </KContainer.View> */}
         </KContainer.View>
       </KContainer.View>
     </KContainer.View>

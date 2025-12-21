@@ -11,7 +11,7 @@ import Image from 'next/image';
 import KButtons from '@/lib/Button';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useTranslation } from 'react-i18next';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
 
 

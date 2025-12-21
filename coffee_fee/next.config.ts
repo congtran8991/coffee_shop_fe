@@ -7,16 +7,15 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  i18n: {
-    locales: ['en', 'vi', 'default'], // Các ngôn ngữ hỗ trợ
-    defaultLocale: 'vi', // Ngôn ngữ mặc định
-    localeDetection: false, // Tắt tự động phát hiện ngôn ngữ
-  },
-  reloadOnPrerender: true,
-
+  // i18n: {
+  //   locales: ['en', 'vi', 'default'], // Các ngôn ngữ hỗ trợ
+  //   defaultLocale: 'vi', // Ngôn ngữ mặc định
+  //   localeDetection: false, // Tắt tự động phát hiện ngôn ngữ
+  // },
   reactStrictMode: true,
   images: {
     // domains: ['hcm.fstorage.vn'], // ✅ Thêm domain vào đây
+    unoptimized: true,
     remotePatterns: [
       // ✅ Thêm domain vào đây
       {
@@ -34,6 +33,7 @@ const nextConfig: NextConfig = {
   experimental: {
     externalDir: true,
   },
+  output: 'export',
 };
 
 export default nextConfig;
