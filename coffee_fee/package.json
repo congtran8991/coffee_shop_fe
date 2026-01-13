@@ -15,7 +15,7 @@
     "@hookform/resolvers": "^4.1.1",
     "@mui/icons-material": "^6.4.6",
     "@mui/material": "^6.4.6",
-    "@reduxjs/toolkit": "^2.5.0",
+    "@reduxjs/toolkit": "^2.11.2",
     "@types/react-slick": "^0.23.13",
     "axios": "^1.8.3",
     "cookies-next": "^6.1.0",
